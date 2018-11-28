@@ -40,15 +40,15 @@ public class SystemControl {
     }
 
 
-//    public void SignupOpertion(int role) {
-//        if (role == 1) {
-//            //newStudent();
-//        } else if (role == 2) {
-//            //newPatient();
-//        } else if (role == 3) {
-//            //newFoundation();
-//        }
-//    }
+    public void SignupOpertion(int role) {
+        if (role == 1) {
+            //newStudent();
+        } else if (role == 2) {
+            //newPatient();
+        } else if (role == 3) {
+            //newFoundation();
+        }
+    }
 //
 //    private PatientUser newPatient(String name, Date dob, String email, String password, String phoneNumber, int pWeight) {
 //        return new PatientUser(name, 1, dob, email, password, phoneNumber, pWeight);
