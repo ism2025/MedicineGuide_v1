@@ -40,7 +40,7 @@ public class SystemControl {
     }
 
 
-    public void SignupOpertion(int role) {
+    public void SignupOpeartion(int role) {
         if (role == 1) {
             //newStudent();
         } else if (role == 2) {
@@ -49,6 +49,7 @@ public class SystemControl {
             //newFoundation();
         }
     }
+    //Yosef Hemar
 //
 //    private PatientUser newPatient(String name, Date dob, String email, String password, String phoneNumber, int pWeight) {
 //        return new PatientUser(name, 1, dob, email, password, phoneNumber, pWeight);
