@@ -11,15 +11,15 @@ public class PatientUser extends User {
     private ArrayList<Diseases> diseases;
     private ArrayList<DoctorUser> patientDoctor;
 
-    public PatientUser(String id, String name, int role, Date dob, String email, String password, String phoneNumber, String photoUrl) {
-        super(id, name, role, dob, email, password, phoneNumber, photoUrl);
+    public PatientUser( String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+        super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setpWeight(pWeight);
+        this.setId("");
         medicines = new ArrayList<>();
         diseases = new ArrayList<>();
         patientDoctor = new ArrayList<>();
         SystemControl.allPatients.add(this);
     }
-
 
     public int getpWeight() {
         return pWeight;

@@ -31,7 +31,7 @@ public class SystemControl {
         return tmp;
     }
 
-    public User SigninOperation(String email, String password) {
+    public static User SigninOperation(String email, String password) {
         User tmp = getUserByEmail(email);
         if (tmp != null && tmp.getPassword().equals(password)) {
             return tmp;

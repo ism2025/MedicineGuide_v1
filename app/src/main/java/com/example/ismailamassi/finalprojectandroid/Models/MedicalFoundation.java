@@ -16,13 +16,14 @@ public class MedicalFoundation extends User {
     private Date startDate;
     private Date expiryDate;
 
-
-    public MedicalFoundation(String id, String name, int role, Date dob, String email, String password, String phoneNumber, String photoUrl) {
-        super(id, name, role, dob, email, password, phoneNumber, photoUrl);
+    public MedicalFoundation(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+        super(name, email, password, phoneNumber, role, dob, photoUrl);
+        this.setId("");
         this.setLocation(location);
         foundationDoctor = new ArrayList<>();
         SystemControl.allMedicalFoundations.add(this);
     }
+
 
     public String getLocation() {
         return location;

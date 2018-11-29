@@ -5,12 +5,11 @@ import android.os.Bundle;
 
 import com.example.ismailamassi.finalprojectandroid.R;
 
-public class HomePageActivity extends AppCompatActivity {
+public class ForgetPasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
-
+        setContentView(R.layout.activity_forgetpassword);
     }
 }

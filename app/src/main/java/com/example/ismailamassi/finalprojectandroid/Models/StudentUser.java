@@ -7,8 +7,9 @@ import java.util.Date;
 public class StudentUser extends User {
     private String educationalFoundation;
 
-    public StudentUser(String id, String name, int role, Date dob, String email, String password, String phoneNumber, String photoUrl) {
-        super(id, name, role, dob, email, password, phoneNumber, photoUrl);
+    public StudentUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+        super(name, email, password, phoneNumber, role, dob, photoUrl);
+        this.setId("");
         this.setEducationalFoundation(educationalFoundation);
         SystemControl.allStudents.add(this);
     }

@@ -9,13 +9,15 @@ public abstract class User {
     private String name;
     private String photoUrl;
     private int role;
+    private int gender;
+
     private Date dob;
+
     private String email;
     private String password;
     private String phoneNumber;
 
-    public User(String id, String name, int role, Date dob, String email, String password, String phoneNumber, String photoUrl) {
-        this.id = id;
+    public User(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         this.name = name;
         this.role = role;
         this.dob = dob;
@@ -89,5 +91,13 @@ public abstract class User {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 }
