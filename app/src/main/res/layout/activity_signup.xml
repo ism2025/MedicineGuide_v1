@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/aa"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +9,7 @@
     tools:context=".Activites.SignupActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_typeacc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Patient Account"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/tv_typeacc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_typeacc" />
 
     <Button
         android:id="@+id/btn_studentacc"
@@ -45,16 +47,17 @@
         app:layout_constraintStart_toStartOf="@+id/btn_studentacc"
         app:layout_constraintTop_toBottomOf="@+id/btn_studentacc" />
 
-    <android.support.v4.view.ViewPager
+    <LinearLayout
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:orientation="horizontal" />
 
 </android.support.constraint.ConstraintLayout>

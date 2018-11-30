@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="84dp"
         android:layout_height="76dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@string/logo"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,9 @@
         android:id="@+id/til1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,12 +36,12 @@
             android:id="@+id/et_phonenum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_person_outline_black_24dp"
+            android:drawablePadding="8dp"
             android:hint="@string/phone_number"
             android:inputType="phone"
-            android:paddingEnd="4dp"
             android:paddingStart="4dp"
+            android:paddingEnd="4dp"
             android:textSize="14sp" />
     </android.support.design.widget.TextInputLayout>
 
@@ -49,8 +49,8 @@
         android:id="@+id/til2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:padding="2dp"
         app:layout_constraintEnd_toEndOf="@+id/til1"
         app:layout_constraintStart_toStartOf="@+id/til1"
@@ -60,34 +60,37 @@
             android:id="@+id/dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+            android:drawablePadding="8dp"
             android:hint="@string/dob"
             android:inputType="date"
-            android:paddingEnd="4dp"
             android:paddingStart="4dp"
+            android:paddingEnd="4dp"
             android:textSize="14sp" />
 
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_backsignup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="280dp"
         android:text="Back"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_next"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_nextsignup2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_nextsignup2" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_nextsignup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Next"
         app:layout_constraintBottom_toTopOf="@+id/tv_createaccount"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_backsignup2" />
 
     <TextView
         android:id="@+id/tv_createaccount"
@@ -96,14 +99,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
 
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:paddingBottom="8dp"
         android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:text="@string/have_account"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -117,9 +120,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
         android:text="Choose Photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
