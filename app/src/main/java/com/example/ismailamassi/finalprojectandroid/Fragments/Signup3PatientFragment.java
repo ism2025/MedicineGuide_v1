@@ -17,7 +17,7 @@ import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
-import com.example.ismailamassi.finalprojectandroid.R;
+import com.example.ismailamassi.finalprojectandroid.*;
 import com.fourhcode.forhutils.FUtilsValidation;
 
 public class Signup3PatientFragment extends Fragment {
