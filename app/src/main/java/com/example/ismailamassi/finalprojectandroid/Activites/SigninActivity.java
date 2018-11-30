@@ -27,7 +27,6 @@ public class SigninActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        StudentUser studentUser = new StudentUser(2 + "", "ismail", 2, null, "123456@mail.com", "123456", "0592182025", "");
 
         bindView();
         homePageIntent = new Intent(SigninActivity.this, HomePageActivity.class);
