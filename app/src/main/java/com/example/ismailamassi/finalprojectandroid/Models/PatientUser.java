@@ -1,8 +1,12 @@
 package com.example.ismailamassi.finalprojectandroid.Models;
 
+import android.widget.TextView;
+
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class PatientUser extends User {
@@ -11,10 +15,21 @@ public class PatientUser extends User {
     private ArrayList<Diseases> diseases;
     private ArrayList<DoctorUser> patientDoctor;
 
-    public PatientUser( String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+    String id;
+    static int count = 1;
+    String year = Calendar.getInstance().get(Calendar.YEAR) + "";
+    String yearSplit = year.substring(2, 4);
+
+
+    public PatientUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setpWeight(pWeight);
-        this.setId("");
+        if (count < 99999) {
+            String countWithZero = String.format("%04d", count);
+            id = role + yearSplit + countWithZero;
+            count++;
+        }
+        this.setId(id);
         medicines = new ArrayList<>();
         diseases = new ArrayList<>();
         patientDoctor = new ArrayList<>();

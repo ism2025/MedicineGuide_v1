@@ -18,6 +18,7 @@ public abstract class User {
     private String phoneNumber;
 
     public User(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+
         this.name = name;
         this.role = role;
         this.dob = dob;
