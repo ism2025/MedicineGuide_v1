@@ -1,21 +1,14 @@
 package com.example.ismailamassi.finalprojectandroid.Activites;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.ismailamassi.finalprojectandroid.Adapters.SignupAdapter;
 import com.example.ismailamassi.finalprojectandroid.Fragments.Signup1Fragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup2Fragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup3FoundtionFragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup3PatientFragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup3StudentFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -23,7 +16,7 @@ public class SignupActivity extends AppCompatActivity {
     Button btn_studentacc, btn_patientacc, btn_foundtionacc;
     LinearLayout viewPager;
     Fragment[] fragments = new Fragment[1];
-    TextView tv_typeacc ;
+    TextView tv_type ;
     int typeAcc;
 
     @Override
@@ -41,9 +34,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_studentacc = findViewById(R.id.btn_studentacc);
         btn_patientacc = findViewById(R.id.btn_patientacc);
         btn_foundtionacc = findViewById(R.id.btn_foundtionacc);
-        tv_typeacc = findViewById(R.id.tv_typeacc);
-
-
+        tv_type = findViewById(R.id.tv_type);
     }
 
     private void onClickItems() {
@@ -80,7 +71,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_studentacc.setVisibility(View.GONE);
         btn_patientacc.setVisibility(View.GONE);
         btn_foundtionacc.setVisibility(View.GONE);
-        tv_typeacc.setVisibility(View.GONE);
+        tv_type.setVisibility(View.GONE);
 
     }
     public void repleceFragmentSignUp(int typeAcc){

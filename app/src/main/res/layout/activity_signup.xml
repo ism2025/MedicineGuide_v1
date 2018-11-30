@@ -9,7 +9,7 @@
     tools:context=".Activites.SignupActivity">
 
     <TextView
-        android:id="@+id/tv_typeacc"
+        android:id="@id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Patient Account"
-        app:layout_constraintStart_toStartOf="@+id/tv_typeacc"
-        app:layout_constraintTop_toBottomOf="@+id/tv_typeacc" />
+        app:layout_constraintStart_toStartOf="@id/tv_type"
+        app:layout_constraintTop_toBottomOf="@id/tv_type" />
 
     <Button
         android:id="@+id/btn_studentacc"

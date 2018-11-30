@@ -57,15 +57,15 @@
         app:layout_constraintTop_toBottomOf="@+id/til1">
 
         <EditText
-            android:id="@+id/dob"
+            android:id="@+id/et_dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_mail_outline_black_24dp"
             android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_mail_outline_black_24dp"
             android:hint="@string/dob"
             android:inputType="date"
-            android:paddingStart="4dp"
             android:paddingEnd="4dp"
+            android:paddingStart="4dp"
             android:textSize="14sp" />
 
     </android.support.design.widget.TextInputLayout>
@@ -87,13 +87,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="Next"
-        app:layout_constraintBottom_toTopOf="@+id/tv_createaccount"
+        app:layout_constraintBottom_toTopOf="@+id/tv_haveacc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_backsignup2" />
 
     <TextView
-        android:id="@+id/tv_createaccount"
+        android:id="@+id/tv_haveacc"
         style="@style/paddings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <EditText
-            android:id="@+id/et_phonenum"
+            android:id="@+id/et_foundtion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="8dp"
@@ -46,6 +46,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <RadioGroup
+        android:id="@+id/rg_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -54,16 +55,18 @@
         app:layout_constraintTop_toTopOf="@+id/textView2">
 
         <RadioButton
+            android:id="@+id/rb_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/male"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/female"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
     </RadioGroup>
 
     <Button
@@ -82,11 +85,11 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/finish"
-        app:layout_constraintBottom_toTopOf="@+id/tv_createaccount"
+        app:layout_constraintBottom_toTopOf="@+id/tv_haveacc"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/tv_createaccount"
+        android:id="@+id/tv_haveacc"
         style="@style/paddings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
-import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -36,7 +35,7 @@ public class SigninActivity extends AppCompatActivity {
     }
 
     private void bindView() {
-        tv_createaccount = findViewById(R.id.tv_createaccount);
+        tv_createaccount = findViewById(R.id.tv_haveacc);
         tv_forgetpassword = findViewById(R.id.tv_forgetpassword);
 
         et_email = findViewById(R.id.et_email);

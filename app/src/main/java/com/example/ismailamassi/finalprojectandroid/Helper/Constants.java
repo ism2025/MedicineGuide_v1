@@ -6,5 +6,7 @@ public class Constants {
     public static final int STUDENT_ACCOUNT = 1;
     public static final int PATIENT_ACCOUNT = 2;
     public static final int FOUNDTION_ACCOUNT = 3;
+    public static final String FIELD_REQUIRED = "This field is required";;
+
 
 }
