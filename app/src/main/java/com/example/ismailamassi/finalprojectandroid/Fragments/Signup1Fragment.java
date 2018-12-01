@@ -59,9 +59,11 @@ public class Signup1Fragment extends Fragment {
             public void onClick(View v) {
                 Signup2Fragment signup2Fragment = new Signup2Fragment();
                 int isValied = ValidationData();
-                if (isValied != -1) {
+                if (isValied == 1) {
                     signup2Fragment.setArguments(bundle);
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, signup2Fragment).commit();
+                } else if (isValied == -2) {
+                    et_email.setError("This Email is alaredy Sign up");
                 }
 
             }
@@ -74,16 +76,19 @@ public class Signup1Fragment extends Fragment {
         password = Methods.getStringFromEditText(et_password);
         confirmpass = Methods.getStringFromEditText(et_confrimpass);
         if (SystemControl.getUserByEmail(email) != null) {
-            et_username.setError("This Email is alaredy Sign up");
-            return -1;
+            return -2;
         } else {
-            if (!FUtilsValidation.isEmpty(et_username, "Please fill username")
-                    && FUtilsValidation.isValidEmail(et_email, "Please enter Valied Email")
-                    && !FUtilsValidation.isEmpty(et_password, "Please fill Password")) {
-                if (FUtilsValidation.isPasswordEqual(et_password, et_confrimpass, "") && FUtilsValidation.isLengthCorrect(password, 6, 32)) {
-                    et_password.setError("كلمتي المرور غير متطابقتان");
+            if (FUtilsValidation.isEmpty(et_username, "Please fill username")
+                    || !FUtilsValidation.isValidEmail(et_email, "Please enter Valied Email")
+                    || FUtilsValidation.isEmpty(et_password, "Please fill Password")
+                    || !FUtilsValidation.isPasswordEqual(et_password, et_confrimpass, "No Match")
+                    ) {
+                if (!FUtilsValidation.isLengthCorrect(password, 6, 32)){
+                    et_password.setError("The Password Must be between 6 - 32 digit");
+                    return -1;
                 }
                 return -1;
+
             } else {
                 typeAcc = activity.getTypeAcc();
                 bundle.putInt("typeAcc", typeAcc);

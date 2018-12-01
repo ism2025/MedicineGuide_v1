@@ -95,7 +95,7 @@ public class Signup3PatientFragment extends Fragment {
             return -1;
         } else {
             bundle.putInt("gender", selectedGender);
-            bundle.putInt("weight", Integer.parseInt(Methods.getStringFromEditText(et_diseases)));
+            bundle.putInt("weight", Integer.parseInt(Methods.getStringFromEditText(et_weight)));
             bundle.putString("diseases", Methods.getStringFromEditText(et_diseases));
             return 1;
         }

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.ismailamassi.finalprojectandroid.Activites.HomePageActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;

@@ -23,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splashscreen);
 
         sliderIntent = new Intent(this, IntroSliderActivity.class);
-        CountDownTimer count = new CountDownTimer(3000, 1000) {
+        CountDownTimer count = new CountDownTimer(1500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 

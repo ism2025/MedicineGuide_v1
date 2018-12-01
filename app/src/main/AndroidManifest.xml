@@ -14,22 +14,19 @@
                 <action android:name="signinActivity" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.SignupActivity"></activity>
+        <activity android:name=".Activites.SignupActivity" />
         <activity android:name=".Activites.SplashScreenActivity">
-        </activity>
-        <activity android:name=".Activites.IntroSliderActivity" />
-        <activity android:name=".Activites.HomePageActivity" />
-        <activity android:name=".Activites.ForgetPasswordActivity" />
-        <activity
-            android:name=".Activites.MainActivity"
-            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".Activites.IntroSliderActivity" />
+        <activity android:name=".Activites.ForgetPasswordActivity" />
+        <activity
+            android:name=".Activites.MainActivity"
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>

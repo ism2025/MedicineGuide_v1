@@ -9,12 +9,12 @@
     tools:context=".Activites.SignupActivity">
 
     <TextView
-        android:id="@id/tv_type"
+        android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Choose Account Type"
+        android:text="@string/choose_account_type"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,16 +25,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Patient Account"
-        app:layout_constraintStart_toStartOf="@id/tv_type"
-        app:layout_constraintTop_toBottomOf="@id/tv_type" />
+        android:text="@string/patient_account"
+        app:layout_constraintStart_toStartOf="@+id/tv_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
     <Button
         android:id="@+id/btn_studentacc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Student Account"
+        android:text="@string/student_account"
         app:layout_constraintStart_toStartOf="@+id/btn_patientacc"
         app:layout_constraintTop_toBottomOf="@+id/btn_patientacc" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Foundtion Account"
+        android:text="@string/foundtion_account"
         app:layout_constraintStart_toStartOf="@+id/btn_studentacc"
         app:layout_constraintTop_toBottomOf="@+id/btn_studentacc" />
 

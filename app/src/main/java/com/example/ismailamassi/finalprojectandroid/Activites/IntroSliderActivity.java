@@ -40,9 +40,14 @@ public class IntroSliderActivity extends AppCompatActivity {
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
-            launchHomeScreen();
+            if (!prefManager.isSignin()) {
+                launchSignInScreen();
+            } else {
+                launchHomeScreen();
+            }
             finish();
         }
+
 
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
@@ -81,7 +86,7 @@ public class IntroSliderActivity extends AppCompatActivity {
                         this.start();
                     }
                 } else {
-//                    launchHomeScreen();
+                    prefManager.setFirstTimeLaunch(false);
                 }
             }
         }.start();
@@ -121,7 +126,12 @@ public class IntroSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(IntroSliderActivity.this, HomePageActivity.class));
+        startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
+        finish();
+    }
+
+    private void launchSignInScreen() {
+        startActivity(new Intent(IntroSliderActivity.this, SigninActivity.class));
         finish();
     }
 

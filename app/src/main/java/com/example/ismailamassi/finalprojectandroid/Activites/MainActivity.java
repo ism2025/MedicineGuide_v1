@@ -15,11 +15,14 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.NotificationsPageF
 import com.example.ismailamassi.finalprojectandroid.Fragments.PatientPageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.PharmaceuticalPageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.SavedPageFragment;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private PrefManager prefManager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,7 +53,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        prefManager = new PrefManager(this);
+        int role = prefManager.getTypeAccount();
+        if (role == Constants.STUDENT_ACCOUNT){
+//            setContentView(R.layout.);
+        }else if (role == Constants.PATIENT_ACCOUNT){
+
+        }else if (role == Constants.DOCTOR_ACCOUNT){
+
+        }else if (role == Constants.FOUNDTION_ACCOUNT){
+
+        }else if (role == Constants.ADMIN_ACCOUNT){
+
+        }
+//        setContentView(R.layout.activity_main);
 
 
         mTextMessage = (TextView) findViewById(R.id.message);
@@ -60,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    public void setFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.view_pagerbottomnav,fragment).commit();
+    public void setFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.view_pagerbottomnav, fragment).commit();
 
     }
 }

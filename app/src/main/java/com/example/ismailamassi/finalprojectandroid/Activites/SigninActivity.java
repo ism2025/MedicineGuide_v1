@@ -10,7 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
+import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
+import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -20,7 +23,9 @@ public class SigninActivity extends AppCompatActivity {
     EditText et_email, et_password;
     Button btn_login;
     String email, password;
-    Intent homePageIntent, signupIntent, forgetPasswordIntent;
+    Intent mainActivityIntent, signupIntent, forgetPasswordIntent;
+
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,13 @@ public class SigninActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         bindView();
-        homePageIntent = new Intent(SigninActivity.this, HomePageActivity.class);
+        StudentUser studentUser = new StudentUser("admin", "email", "password", "0592182025", Constants.STUDENT_ACCOUNT, null, "");
+        mainActivityIntent = new Intent(SigninActivity.this, MainActivity.class);
         signupIntent = new Intent(SigninActivity.this, SignupActivity.class);
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
+        prefManager = new PrefManager(this);
         onClickItems();
+
     }
 
     private void bindView() {
@@ -52,7 +60,9 @@ public class SigninActivity extends AppCompatActivity {
                 password = Methods.getStringFromEditText(et_password);
                 User user = SystemControl.SigninOperation(email, password);
                 if (user != null) {
-                    startActivity(homePageIntent);
+                    startActivity(mainActivityIntent);
+                    prefManager.setSignin(true);
+                    prefManager.setTypeAccount(user.getRole());
                 } else
                     Toast.makeText(SigninActivity.this, Methods.getStringFromResources(SigninActivity.this, R.string.error_signin), Toast.LENGTH_SHORT).show();
             }

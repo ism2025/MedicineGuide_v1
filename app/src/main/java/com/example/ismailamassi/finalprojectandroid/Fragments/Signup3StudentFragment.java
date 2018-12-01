@@ -13,7 +13,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.ismailamassi.finalprojectandroid.Activites.HomePageActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
