@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
@@ -18,6 +19,7 @@ public class Signup3FoundtionFragment extends Fragment {
 
     Button btn_finish, btn_back;
 
+    TextView tv_haveacc;
     Intent signinIntent;
     Bundle bundle;
 
@@ -29,6 +31,8 @@ public class Signup3FoundtionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signup3foundtion, container, false);
         signinIntent = new Intent(getActivity(), SigninActivity.class);
+        tv_haveacc = view.findViewById(R.id.tv_haveacc);
+
         return view;
     }
 
@@ -37,6 +41,7 @@ public class Signup3FoundtionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         signinIntent = new Intent(getActivity(), SigninActivity.class);
         bundle = getArguments();
+        signinIntent = new Intent(getActivity(), SigninActivity.class);
         onClickItems();
     }
 
@@ -51,6 +56,12 @@ public class Signup3FoundtionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup2Fragment()).commit();
+            }
+        });
+        tv_haveacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(signinIntent);
             }
         });
     }

@@ -56,6 +56,7 @@ public class Signup3StudentFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         signinIntent = new Intent(getActivity(), SigninActivity.class);
         bundle = getArguments();
+        signinIntent = new Intent(getActivity(), SigninActivity.class);
         onClickItems();
     }
 
@@ -86,6 +87,12 @@ public class Signup3StudentFragment extends Fragment {
                     saveData();
                     startActivity(signinIntent);
                 }
+            }
+        });
+        tv_haveacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(signinIntent);
             }
         });
     }

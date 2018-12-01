@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Activites.MainActivity">
 
-    <RelativeLayout
+    <android.support.v4.view.ViewPager
         android:id="@+id/view_pagerbottomnav"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </RelativeLayout>
+    </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -30,6 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fitsSystemWindows="true"
         app:menu="@menu/navigation" />
 
 </android.support.constraint.ConstraintLayout>
