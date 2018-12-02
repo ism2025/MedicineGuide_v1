@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
 import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerAdapter;
 import com.example.ismailamassi.finalprojectandroid.Fragments.HomePageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.NotificationsPageFragment;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private NotificationsPageFragment notificationsPageFragment;
     private PharmaceuticalPageFragment pharmaceuticalPageFragment;
     private SavedPageFragment savedPageFragment;
+    ViewPagerAdapter viewPagerAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.view_pagerbottomnav);
 
-        final BottomNavigationView navigation =  findViewById(R.id.navigation);
+        final BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
         viewPager.setCurrentItem(0);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         homePageFragment = new HomePageFragment();
         patientPageFragment = new PatientPageFragment();
         notificationsPageFragment = new NotificationsPageFragment();

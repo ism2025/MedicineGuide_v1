@@ -16,17 +16,6 @@
         </activity>
         <activity android:name=".Activites.SignupActivity" />
         <activity android:name=".Activites.SplashScreenActivity">
-<<<<<<< HEAD
-=======
-
-        </activity>
-        <activity android:name=".Activites.IntroSliderActivity" />
-        <activity android:name=".Activites.HomePageActivity" />
-        <activity android:name=".Activites.ForgetPasswordActivity" />
-        <activity
-            android:name=".Activites.MainActivity"
-            android:label="@string/title_activity_main">
->>>>>>> e7d355c683933a4b02bf20ef26e7a904d5e56f19
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,9 +24,15 @@
         </activity>
         <activity android:name=".Activites.IntroSliderActivity" />
         <activity android:name=".Activites.ForgetPasswordActivity" />
-        <activity
-            android:name=".Activites.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+        <activity android:name=".Activites.MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
