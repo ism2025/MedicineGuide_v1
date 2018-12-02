@@ -28,7 +28,7 @@ public class SigninActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         bindView();
-        homePageIntent = new Intent(SigninActivity.this, HomePageActivity.class);
+//        homePageIntent = new Intent(SigninActivity.this, HomePageActivity.class);
         signupIntent = new Intent(SigninActivity.this, SignupActivity.class);
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
         onClickItems();

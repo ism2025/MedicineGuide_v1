@@ -121,7 +121,7 @@ public class IntroSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(IntroSliderActivity.this, HomePageActivity.class));
+        //startActivity(new Intent(IntroSliderActivity.this, HomePageActivity.class));
         finish();
     }
 

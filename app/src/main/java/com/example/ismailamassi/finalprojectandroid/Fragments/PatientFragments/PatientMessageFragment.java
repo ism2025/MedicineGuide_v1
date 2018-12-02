@@ -1,6 +1,7 @@
-package com.example.ismailamassi.finalprojectandroid.Fragments;
+package com.example.ismailamassi.finalprojectandroid.Fragments.PatientFragments;
 
-
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,22 +10,18 @@ import android.view.ViewGroup;
 
 import com.example.ismailamassi.finalprojectandroid.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class PatientPageFragment extends Fragment {
-
-
-    public PatientPageFragment() {
+public class PatientMessageFragment extends Fragment {
+    public PatientMessageFragment() {
         // Required empty public constructor
     }
 
 
-    @Override
+    // TODO: Rename and change types and number of parameters
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_patientpage, container, false);
+        return inflater.inflate(R.layout.fragment_patientmessage, container, false);
     }
+
 
 }

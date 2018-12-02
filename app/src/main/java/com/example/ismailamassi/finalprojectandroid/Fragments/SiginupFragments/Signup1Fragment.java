@@ -1,4 +1,4 @@
-package com.example.ismailamassi.finalprojectandroid.Fragments;
+package com.example.ismailamassi.finalprojectandroid.Fragments.SiginupFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

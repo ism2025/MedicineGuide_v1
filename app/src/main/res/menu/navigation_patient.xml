@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_midicinepatient"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/my_midicine" />
+    <item
+        android:id="@+id/navigation_messagepatient"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/messages" />
+
+    <item
+        android:id="@+id/navigation_notificationpatient"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_notifications" />
+
+
+
+</menu>

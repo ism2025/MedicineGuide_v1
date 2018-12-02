@@ -1,4 +1,4 @@
-package com.example.ismailamassi.finalprojectandroid.Fragments;
+package com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.ismailamassi.finalprojectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SavedPageFragment extends Fragment {
+public class DoctorMessageFragment extends Fragment {
 
 
-    public SavedPageFragment() {
+    public DoctorMessageFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class SavedPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_savedpage, container, false);
+        return inflater.inflate(R.layout.fragment_message_doctor, container, false);
     }
 
 }

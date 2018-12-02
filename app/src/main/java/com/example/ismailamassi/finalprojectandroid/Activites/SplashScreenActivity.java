@@ -34,5 +34,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                 startActivity(sliderIntent);
             }
         }.start();
+
     }
 }
