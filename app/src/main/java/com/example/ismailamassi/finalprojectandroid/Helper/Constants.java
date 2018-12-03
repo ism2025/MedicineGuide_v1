@@ -1,5 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Helper;
 
+import com.example.ismailamassi.finalprojectandroid.Models.User;
+
 public class Constants {
     public static final String PREF_NAME = "introSP";
     public static final String ROLE = "role";
@@ -14,6 +16,7 @@ public class Constants {
     public static final int ADMIN_ACCOUNT = 5;
     public static final String CURRENT_USER = "current_user";
     public static final String FIELD_REQUIRED = "This field is required";
+    public static User user =null;
 
 
 }

@@ -88,6 +88,7 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
                         + drug.getDrugType() + "\n"
                         + drug.isTake()
                 );
-        dialog.show();
+        dialog.create().show();
+
     }
 }

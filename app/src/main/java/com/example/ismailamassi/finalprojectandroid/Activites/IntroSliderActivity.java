@@ -48,7 +48,8 @@ public class IntroSliderActivity extends AppCompatActivity {
             if (!prefManager.isSignin()) {
                 launchSignInScreen();
             } else {
-                launchHomeScreen();
+                launchSignInScreen();
+
             }
             finish();
         }
@@ -131,25 +132,19 @@ public class IntroSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-<<<<<<< HEAD
         //startActivity(new Intent(IntroSliderActivity.this, HomePageActivity.class));
         startActivity(new Intent(IntroSliderActivity.this, SigninActivity.class));
         finish();
-=======
 
 
         SystemControl.openMainActicityByUserType(IntroSliderActivity.this, SystemControl.getUserById(prefManager.getIdAccount()));
 //        startActivity(new Intent(IntroSliderActivity.this, ForgetPasswordActivity.class));
 
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     }
 
     private void launchSignInScreen() {
         startActivity(new Intent(IntroSliderActivity.this, SigninActivity.class));
-<<<<<<< HEAD
         finish();
-=======
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     }
 
     //  viewpager change listener

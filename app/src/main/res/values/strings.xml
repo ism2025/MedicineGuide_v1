@@ -56,19 +56,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-<<<<<<< HEAD
-    <string name="messages">messages</string>
-    <string name="my_midicine">My Midicine</string>
-=======
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     <string name="choose_account_type">Choose Account Type</string>
     <string name="foundtion_account">Foundtion Account</string>
     <string name="student_account">Student Account</string>
     <string name="patient_account">Patient Account</string>
-<<<<<<< HEAD
->>>>>>> 345f063d768284b8c71fa3925e28c6117ae55650
-=======
     <string name="messages">messages</string>
     <string name="my_midicine">My Midicine</string>
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
 </resources>

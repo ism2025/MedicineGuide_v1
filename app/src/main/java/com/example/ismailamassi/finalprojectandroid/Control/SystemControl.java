@@ -41,14 +41,13 @@ public class SystemControl {
     private static Intent adminMainActivityIntent;
 
     public static User getUserByEmail(String email) {
-        User tmp = null;
         for (User user : allUsers) {
             if (user.getEmail().equalsIgnoreCase(email)) {
-                tmp = user;
+                Constants.user = user;
                 break;
             }
         }
-        return tmp;
+        return Constants.user;
     }
 
     public static User getUserById(String id) {
@@ -83,23 +82,18 @@ public class SystemControl {
 //        try {
         switch (user.getRole()) {
             case Constants.STUDENT_ACCOUNT:
-                studentMainActivityIntent.putExtra(Constants.CURRENT_USER, user);
                 context.startActivity(studentMainActivityIntent);
                 break;
             case Constants.PATIENT_ACCOUNT:
-                patientMainActivityIntent.putExtra(Constants.CURRENT_USER, user);
                 context.startActivity(patientMainActivityIntent);
                 break;
             case Constants.DOCTOR_ACCOUNT:
-                doctorMainActivityIntent.putExtra(Constants.CURRENT_USER, user);
                 context.startActivity(doctorMainActivityIntent);
                 break;
             case Constants.FOUNDTION_ACCOUNT:
-                foundationMainActivityIntent.putExtra(Constants.CURRENT_USER, user);
                 context.startActivity(foundationMainActivityIntent);
                 break;
             case Constants.ADMIN_ACCOUNT:
-                adminMainActivityIntent.putExtra(Constants.CURRENT_USER, user);
                 context.startActivity(adminMainActivityIntent);
                 break;
             default:

@@ -50,8 +50,10 @@ public class PatientMedicineFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         PatientUser patientUser = (PatientUser) this.getActivity().getIntent().getSerializableExtra(Constants.CURRENT_USER);
+/*
         MedicinePatientAdapter medicinePatientAdapter = new MedicinePatientAdapter(activity, patientUser.getDrugs());
         rv_patientmedicine.setAdapter(medicinePatientAdapter);
+*/
         LinearLayoutManager layoutManager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);
         rv_patientmedicine.setLayoutManager(layoutManager);
     }

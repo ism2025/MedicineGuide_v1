@@ -1,19 +1,18 @@
 package com.example.ismailamassi.finalprojectandroid.Activites;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-<<<<<<< HEAD
-=======
 
 import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerAdapter;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
 import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
@@ -21,23 +20,17 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.Do
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPharmaceuticalFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorSavedFragment;
-<<<<<<< HEAD
 
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
-=======
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class DoctorMainActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
-=======
     private PrefManager prefManager;
     private MenuItem prevMenuItem;
     private ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     private TextView mTextMessage;
     DoctorHomeFragment doctorHomeFragment;
     DoctorPatientFragment patientPageFragment;
@@ -45,11 +38,7 @@ public class DoctorMainActivity extends AppCompatActivity {
     DoctorSavedFragment doctorSavedFragment;
     DoctorMessageFragment doctorMessageFragment;
 
-<<<<<<< HEAD
-    private PrefManager prefManager;
 
-=======
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -79,10 +68,7 @@ public class DoctorMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         setContentView(R.layout.activity_maindoctor);
-=======
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
         prefManager = new PrefManager(this);
         int role = prefManager.getTypeAccount();
         if (role == Constants.STUDENT_ACCOUNT) {
@@ -97,7 +83,6 @@ public class DoctorMainActivity extends AppCompatActivity {
 
         }
 //        setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
         viewPager = findViewById(R.id.view_pagerbottomnav);
 
@@ -105,15 +90,12 @@ public class DoctorMainActivity extends AppCompatActivity {
 
         navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
             viewPager.setCurrentItem(0);
-=======
         setContentView(R.layout.activity_maindoctor);
 
         viewPager = findViewById(R.id.view_pagerbottomnav);
 
-        final BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
         viewPager.setCurrentItem(0);
->>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -121,6 +103,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onPageSelected(int position) {
                 if (prevMenuItem != null) {
