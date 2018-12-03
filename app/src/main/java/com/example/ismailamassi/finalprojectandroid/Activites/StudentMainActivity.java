@@ -7,10 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerAdapter;
 import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerStudentAdapter;
-import com.example.ismailamassi.finalprojectandroid.Fragments.PatientFragments.PatientMedicineFragmaent;
-import com.example.ismailamassi.finalprojectandroid.Fragments.PatientFragments.PatientMessageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments.StudentMidicineFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments.StudentNotificationFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments.StudentSavedFragment;

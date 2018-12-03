@@ -53,4 +53,25 @@ public class PrefManager {
     }
 
 
+    public void setEmailAccount(String emailAccount) {
+        editor.putString(Constants.EMAIL, emailAccount);
+        editor.commit();//apply();
+
+    }
+
+    public String getEmailAccount() {
+        return pref.getString(Constants.EMAIL,"A/N");
+    }
+
+
+    public void setIdAccount(String emailAccount) {
+        editor.putString(Constants.ID, emailAccount);
+        editor.commit();//apply();
+
+    }
+
+    public String getIdAccount() {
+        return pref.getString(Constants.ID,"A/N");
+    }
+
 }

@@ -2,9 +2,10 @@ package com.example.ismailamassi.finalprojectandroid.Models;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class User {
+public abstract class User implements Serializable{
     private String id;
     private String name;
     private String photoUrl;
@@ -18,7 +19,6 @@ public abstract class User {
     private String phoneNumber;
 
     public User(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
-
         this.name = name;
         this.role = role;
         this.dob = dob;

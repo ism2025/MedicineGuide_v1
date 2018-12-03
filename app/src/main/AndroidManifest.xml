@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Activites.SigninActivity">        </activity>
         <activity android:name=".Activites.SignupActivity" />
         <activity android:name=".Activites.SplashScreenActivity" >
@@ -21,16 +22,40 @@
             android:label="@string/title_activity_main">
         </activity>
         <activity android:name=".Activites.PatientMainActivity" >
-
+=======
+        <activity android:name=".Activites.SigninActivity">
+            <intent-filter>
+                <action android:name="signinActivity" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Activites.FoundationMainActivity" />
-        <activity android:name=".Activites.StudentMainActivity">
+        <activity android:name=".Activites.SignupActivity" />
+        <activity android:name=".Activites.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+>>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+        <activity android:name=".Activites.FoundationMainActivity" />
+        <activity android:name=".Activites.StudentMainActivity">
+=======
+        <activity android:name=".Activites.IntroSliderActivity">
+>>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<<<<<<< HEAD
+=======
+        <activity android:name=".Activites.ForgetPasswordActivity" />
+        <activity android:name=".Activites.DoctorMainActivity" />
+        <activity android:name=".Activites.PatientMainActivity" />
+        <activity android:name=".Activites.FoundationMainActivity" />
+        <activity android:name=".Activites.StudentMainActivity"></activity>
+>>>>>>> e43e3019869dfb80016e93c38ac46bd929369392
     </application>
 
 </manifest>
