@@ -13,7 +13,6 @@ import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import android.widget.TextView;
 
-import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorMessageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPharmaceuticalFragment;
@@ -64,15 +63,15 @@ public class DoctorMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         prefManager = new PrefManager(this);
         int role = prefManager.getTypeAccount();
-        if (role == Constants.STUDENT_ACCOUNT) {
+        if (role == Constants.STUDENT_ID) {
 //            setContentView(R.layout.);
-        } else if (role == Constants.PATIENT_ACCOUNT) {
+        } else if (role == Constants.PATIENT_ID) {
 
-        } else if (role == Constants.DOCTOR_ACCOUNT) {
+        } else if (role == Constants.DOCTOR_ID) {
 
-        } else if (role == Constants.FOUNDTION_ACCOUNT) {
+        } else if (role == Constants.FOUNDATION_ID) {
 
-        } else if (role == Constants.ADMIN_ACCOUNT) {
+        } else if (role == Constants.ADMIN_ID) {
 
         }
 //        setContentView(R.layout.activity_main);

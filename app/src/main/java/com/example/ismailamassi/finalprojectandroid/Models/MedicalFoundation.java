@@ -30,14 +30,14 @@ public class MedicalFoundation extends User implements Serializable {
         this.setId("");
         this.setLocation(location);
         yearSplit = year.substring(2, 4);
-        if (role == Constants.FOUNDTION_ACCOUNT) {
+        if (role == Constants.FOUNDATION_ID) {
             if (count <= 99999) {
                 String countWithZero = String.format(Locale.CANADA,"%04d", count);
-                this.setId(Constants.FOUNDTION_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.FOUNDATION_ID + yearSplit + countWithZero);
                 count++;
             } else if (count > 99999) {
                 String countWithZero = String.format(Locale.CANADA,"%05d", count);
-                this.setId(Constants.FOUNDTION_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.FOUNDATION_ID + yearSplit + countWithZero);
                 count++;
             }
         }

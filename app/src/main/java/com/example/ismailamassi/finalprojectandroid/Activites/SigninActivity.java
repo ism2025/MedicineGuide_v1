@@ -39,16 +39,16 @@ public class SigninActivity extends AppCompatActivity {
 
         bindView();
 //        StudentUser studentUser =
-        new StudentUser("student", "student@mail.com", "123456", "0592182025", Constants.STUDENT_ACCOUNT, null, "");
+        new StudentUser("student", "student@mail.com", "123456", "0592182025", Constants.STUDENT_ID, null, "");
         DoctorUser doctorUser =
-                new DoctorUser("doctor", "doctor@mail.com", "123456", "0592182025", Constants.DOCTOR_ACCOUNT, null, "");
+                new DoctorUser("doctor", "doctor@mail.com", "123456", "0592182025", Constants.DOCTOR_ID, null, "");
         PatientUser patientUser =
-                new PatientUser("patient", "patient@mail.com", "123456", "0592182025", Constants.PATIENT_ACCOUNT, null, "");
+                new PatientUser("patient", "patient@mail.com", "123456", "0592182025", Constants.PATIENT_ID, null, "");
 //        MedicalFoundation medicalFoundation =
-        new MedicalFoundation("foundation", "foundation@mail.com", "123456", "0592182025", Constants.FOUNDTION_ACCOUNT, null, "");
-        Medicine medicine = new Medicine();
-        medicine.setName("Test");
-        Drug drug = new Drug(doctorUser, patientUser, medicine, "Monday", "Misslle", 20);
+//        new MedicalFoundation("foundation", "foundation@mail.com", "123456", "0592182025", Constants.FOUNDATION_ID, null, "");
+//        Medicine medicine = new Medicine();
+//        medicine.setName("Test");
+//        Drug drug = new Drug(doctorUser, patientUser, medicine, "Monday", "Misslle", 20);
         signupIntent = new Intent(SigninActivity.this, SignupActivity.class);
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
         prefManager = new PrefManager(this);
@@ -77,7 +77,9 @@ public class SigninActivity extends AppCompatActivity {
                     prefManager.setSignin(true);
 //                    prefManager.setTypeAccount(user.getRole());
                     prefManager.setIdAccount(user.getId());
-                    SystemControl.openMainActicityByUserType(SigninActivity.this, user);
+                    Constants.CURRENT_USER_SIGN_IN = user;
+                    SystemControl.openMainActicityByUserType(SigninActivity.this,
+                            SystemControl.getUserById(prefManager.getIdAccount()));
                 } else
                     Toast.makeText(SigninActivity.this, Methods.getStringFromResources(SigninActivity.this, R.string.error_signin), Toast.LENGTH_SHORT).show();
             }

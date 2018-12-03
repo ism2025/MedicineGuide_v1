@@ -22,14 +22,14 @@ public class DoctorUser extends User implements Serializable {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setId("");
         yearSplit = year.substring(2, 4);
-        if (role == Constants.DOCTOR_ACCOUNT) {
+        if (role == Constants.DOCTOR_ID) {
             if (count <= 99999) {
                 String countWithZero = String.format(Locale.CANADA,"%04d", count);
-                this.setId(Constants.DOCTOR_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.DOCTOR_ID + yearSplit + countWithZero);
                 count++;
             } else if (count > 99999) {
                 String countWithZero = String.format(Locale.CANADA,"%05d", count);
-                this.setId(Constants.DOCTOR_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.DOCTOR_ID + yearSplit + countWithZero);
                 count++;
             }
         }

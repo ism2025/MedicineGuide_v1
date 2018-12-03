@@ -93,15 +93,15 @@ public class Signup2Fragment extends Fragment {
 
     private void startFragment3() {
         final int typeAcc = bundle.getInt("typeAcc");
-        if (typeAcc == Constants.STUDENT_ACCOUNT) {
+        if (typeAcc == Constants.STUDENT_ID) {
             Signup3StudentFragment studentFragment = new Signup3StudentFragment();
             studentFragment.setArguments(bundle);
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).commit();
-        } else if (typeAcc == Constants.FOUNDTION_ACCOUNT) {
+        } else if (typeAcc == Constants.FOUNDATION_ID) {
             Signup3FoundtionFragment studentFragment = new Signup3FoundtionFragment();
             studentFragment.setArguments(bundle);
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).commit();
-        } else if (typeAcc == Constants.PATIENT_ACCOUNT) {
+        } else if (typeAcc == Constants.PATIENT_ID) {
             Signup3PatientFragment patientFragment = new Signup3PatientFragment();
             patientFragment.setArguments(bundle);
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, patientFragment).commit();
