@@ -18,8 +18,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
+import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class IntroSliderActivity extends AppCompatActivity {
@@ -29,7 +33,7 @@ public class IntroSliderActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext, btn_signin, btn_signup;
+    private Button btn_signin, btn_signup;
     private PrefManager prefManager;
     private Intent signinIntent, signupIntent;
 
@@ -37,6 +41,7 @@ public class IntroSliderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
@@ -126,13 +131,15 @@ public class IntroSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
-        finish();
+
+
+        SystemControl.openMainActicityByUserType(IntroSliderActivity.this, SystemControl.getUserById(prefManager.getIdAccount()));
+//        startActivity(new Intent(IntroSliderActivity.this, ForgetPasswordActivity.class));
+
     }
 
     private void launchSignInScreen() {
         startActivity(new Intent(IntroSliderActivity.this, SigninActivity.class));
-        finish();
     }
 
     //  viewpager change listener

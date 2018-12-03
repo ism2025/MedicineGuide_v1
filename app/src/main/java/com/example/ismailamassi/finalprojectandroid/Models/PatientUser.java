@@ -3,33 +3,43 @@ package com.example.ismailamassi.finalprojectandroid.Models;
 import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
-public class PatientUser extends User {
+public class PatientUser extends User implements Serializable {
     private int pWeight;
+    private ArrayList<Drug> drugs;
     private ArrayList<Medicine> medicines;
     private ArrayList<Diseases> diseases;
     private ArrayList<DoctorUser> patientDoctor;
-
     String id;
-    static int count = 1;
-    String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-    String yearSplit = year.substring(2, 4);
 
+    private static int count = 1;
+    private String yearSplit;
+    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
     public PatientUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setpWeight(pWeight);
-        if (count < 99999) {
-            String countWithZero = String.format("%04d", count);
-            id = role + yearSplit + countWithZero;
-            count++;
+        yearSplit = year.substring(2, 4);
+        if (role == Constants.PATIENT_ACCOUNT) {
+            if (count <= 99999) {
+                String countWithZero = String.format(Locale.CANADA, "%04d", count);
+                this.setId(Constants.PATIENT_ACCOUNT + yearSplit + countWithZero);
+                count++;
+            } else if (count > 99999) {
+                String countWithZero = String.format(Locale.CANADA, "%05d", count);
+                this.setId(Constants.PATIENT_ACCOUNT + yearSplit + countWithZero);
+                count++;
+            }
         }
-        this.setId(id);
+        drugs = new ArrayList<>();
         medicines = new ArrayList<>();
         diseases = new ArrayList<>();
         patientDoctor = new ArrayList<>();
@@ -66,5 +76,13 @@ public class PatientUser extends User {
 
     public void setPatientDoctor(ArrayList<DoctorUser> patientDoctor) {
         this.patientDoctor = patientDoctor;
+    }
+
+    public ArrayList<Drug> getDrugs() {
+        return drugs;
+    }
+
+    public void addDrug(Drug drug) {
+        this.drugs.add(drug);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.ismailamassi.finalprojectandroid.Adapters;
 
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,9 +13,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
 
 import java.lang.reflect.Field;
-
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup1Fragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup2Fragment;
 
 
 public class SignupAdapter extends FragmentPagerAdapter {

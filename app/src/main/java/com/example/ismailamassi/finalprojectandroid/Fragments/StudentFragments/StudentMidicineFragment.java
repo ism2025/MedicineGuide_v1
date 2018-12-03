@@ -1,4 +1,4 @@
-package com.example.ismailamassi.finalprojectandroid.Fragments;
+package com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.ismailamassi.finalprojectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PharmaceuticalPageFragment extends Fragment {
+public class StudentMidicineFragment extends Fragment {
 
 
-    public PharmaceuticalPageFragment() {
+    public StudentMidicineFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class PharmaceuticalPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pharmaceutical_page, container, false);
+        return inflater.inflate(R.layout.fragment_studentmidicine, container, false);
     }
 
 }

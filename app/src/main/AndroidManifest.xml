@@ -22,17 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.IntroSliderActivity" />
-        <activity android:name=".Activites.ForgetPasswordActivity" />
-        <activity android:name=".Activites.MainActivity"
-            android:label="@string/title_activity_main">
+        <activity android:name=".Activites.IntroSliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".Activites.ForgetPasswordActivity" />
+        <activity android:name=".Activites.DoctorMainActivity" />
+        <activity android:name=".Activites.PatientMainActivity" />
+        <activity android:name=".Activites.FoundationMainActivity" />
+        <activity android:name=".Activites.StudentMainActivity"></activity>
     </application>
 
 </manifest>

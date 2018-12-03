@@ -1,4 +1,4 @@
-package com.example.ismailamassi.finalprojectandroid.Fragments;
+package com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.ismailamassi.finalprojectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomePageFragment extends Fragment {
+public class DoctorHomeFragment extends Fragment {
 
 
-    public HomePageFragment() {
+    public DoctorHomeFragment() {
         // Required empty public constructor
     }
 

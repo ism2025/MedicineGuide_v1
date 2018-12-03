@@ -1,11 +1,15 @@
 package com.example.ismailamassi.finalprojectandroid.Models;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
-public class MedicalFoundation extends User {
+public class MedicalFoundation extends User implements Serializable {
 
 
     private String location;
@@ -16,10 +20,27 @@ public class MedicalFoundation extends User {
     private Date startDate;
     private Date expiryDate;
 
+
+    private static int count = 1;
+    private String yearSplit;
+    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
+
     public MedicalFoundation(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setId("");
         this.setLocation(location);
+        yearSplit = year.substring(2, 4);
+        if (role == Constants.FOUNDTION_ACCOUNT) {
+            if (count <= 99999) {
+                String countWithZero = String.format(Locale.CANADA,"%04d", count);
+                this.setId(Constants.FOUNDTION_ACCOUNT + yearSplit + countWithZero);
+                count++;
+            } else if (count > 99999) {
+                String countWithZero = String.format(Locale.CANADA,"%05d", count);
+                this.setId(Constants.FOUNDTION_ACCOUNT + yearSplit + countWithZero);
+                count++;
+            }
+        }
         foundationDoctor = new ArrayList<>();
         SystemControl.allMedicalFoundations.add(this);
     }

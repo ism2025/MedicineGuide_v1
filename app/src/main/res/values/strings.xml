@@ -60,4 +60,6 @@
     <string name="foundtion_account">Foundtion Account</string>
     <string name="student_account">Student Account</string>
     <string name="patient_account">Patient Account</string>
+    <string name="messages">messages</string>
+    <string name="my_midicine">My Midicine</string>
 </resources>

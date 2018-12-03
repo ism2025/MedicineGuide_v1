@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.ismailamassi.finalprojectandroid.Fragments.Signup1Fragment;
+import com.example.ismailamassi.finalprojectandroid.Fragments.SiginupFragments.Signup1Fragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.R;
 
