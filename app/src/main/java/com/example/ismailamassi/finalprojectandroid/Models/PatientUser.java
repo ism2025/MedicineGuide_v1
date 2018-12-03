@@ -1,10 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Models;
 
-import android.widget.TextView;
-
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
-import com.example.ismailamassi.finalprojectandroid.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,14 +25,14 @@ public class PatientUser extends User implements Serializable {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setpWeight(pWeight);
         yearSplit = year.substring(2, 4);
-        if (role == Constants.PATIENT_ACCOUNT) {
+        if (role == Constants.PATIENT_ID) {
             if (count <= 99999) {
                 String countWithZero = String.format(Locale.CANADA, "%04d", count);
-                this.setId(Constants.PATIENT_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.PATIENT_ID + yearSplit + countWithZero);
                 count++;
             } else if (count > 99999) {
                 String countWithZero = String.format(Locale.CANADA, "%05d", count);
-                this.setId(Constants.PATIENT_ACCOUNT + yearSplit + countWithZero);
+                this.setId(Constants.PATIENT_ID + yearSplit + countWithZero);
                 count++;
             }
         }

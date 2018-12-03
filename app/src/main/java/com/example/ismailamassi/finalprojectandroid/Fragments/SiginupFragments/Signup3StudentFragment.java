@@ -110,7 +110,7 @@ public class Signup3StudentFragment extends Fragment {
 
     private void saveData() {
         //User
-        int role = Constants.STUDENT_ACCOUNT;
+        int role = Constants.STUDENT_ID;
         String name = bundle.getString("username");
         String email = bundle.getString("email");
         String password = bundle.getString("password");

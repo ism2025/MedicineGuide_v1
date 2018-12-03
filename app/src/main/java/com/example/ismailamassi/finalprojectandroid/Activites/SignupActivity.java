@@ -42,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_studentacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                typeAcc=Constants.STUDENT_ACCOUNT;
+                typeAcc=Constants.STUDENT_ID;
                 getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).commit();
                 visibleGone();
                 viewPager.setVisibility(View.VISIBLE);
@@ -51,7 +51,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_patientacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                typeAcc=Constants.PATIENT_ACCOUNT;
+                typeAcc=Constants.PATIENT_ID;
                 getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).commit();
                 visibleGone();
                 viewPager.setVisibility(View.VISIBLE);
@@ -60,7 +60,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_foundtionacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                typeAcc=Constants.FOUNDTION_ACCOUNT;
+                typeAcc=Constants.FOUNDATION_ID;
                 getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).commit();
                 visibleGone();
                 viewPager.setVisibility(View.VISIBLE);

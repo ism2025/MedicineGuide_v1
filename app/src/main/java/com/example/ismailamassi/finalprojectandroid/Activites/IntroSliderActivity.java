@@ -140,6 +140,8 @@ public class IntroSliderActivity extends AppCompatActivity {
         SystemControl.openMainActicityByUserType(IntroSliderActivity.this, SystemControl.getUserById(prefManager.getIdAccount()));
 //        startActivity(new Intent(IntroSliderActivity.this, ForgetPasswordActivity.class));
 
+        SystemControl.openMainActicityByUserType(IntroSliderActivity.this,
+                SystemControl.getUserById(prefManager.getIdAccount()));
     }
 
     private void launchSignInScreen() {

@@ -10,12 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerAdapter;
+import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerStudentAdapter;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import android.widget.TextView;
 
-import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorMessageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPharmaceuticalFragment;
@@ -30,7 +30,6 @@ public class DoctorMainActivity extends AppCompatActivity {
     private PrefManager prefManager;
     private MenuItem prevMenuItem;
     private ViewPager viewPager;
-    ViewPagerAdapter viewPagerAdapter;
     private TextView mTextMessage;
     DoctorHomeFragment doctorHomeFragment;
     DoctorPatientFragment patientPageFragment;
@@ -51,15 +50,16 @@ public class DoctorMainActivity extends AppCompatActivity {
                 case R.id.navigation_Patient:
                     viewPager.setCurrentItem(1);
                     return true;
-                case R.id.navigation_message:
+                case R.id.navigation_pharmaceutical:
                     viewPager.setCurrentItem(2);
                     return true;
-                case R.id.navigation_pharmaceutical:
+                case R.id.navigation_saves:
                     viewPager.setCurrentItem(3);
                     return true;
-                case R.id.navigation_saves:
+                case R.id.navigation_message:
                     viewPager.setCurrentItem(4);
                     return true;
+
             }
             return false;
         }
@@ -71,15 +71,15 @@ public class DoctorMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_maindoctor);
         prefManager = new PrefManager(this);
         int role = prefManager.getTypeAccount();
-        if (role == Constants.STUDENT_ACCOUNT) {
+        if (role == Constants.STUDENT_ID) {
 //            setContentView(R.layout.);
-        } else if (role == Constants.PATIENT_ACCOUNT) {
+        } else if (role == Constants.PATIENT_ID) {
 
-        } else if (role == Constants.DOCTOR_ACCOUNT) {
+        } else if (role == Constants.DOCTOR_ID) {
 
-        } else if (role == Constants.FOUNDTION_ACCOUNT) {
+        } else if (role == Constants.FOUNDATION_ID) {
 
-        } else if (role == Constants.ADMIN_ACCOUNT) {
+        } else if (role == Constants.ADMIN_ID) {
 
         }
 //        setContentView(R.layout.activity_main);
@@ -89,13 +89,9 @@ public class DoctorMainActivity extends AppCompatActivity {
         final BottomNavigationView navigation =  findViewById(R.id.navigation);
 
         navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
-            viewPager.setCurrentItem(0);
-        setContentView(R.layout.activity_maindoctor);
 
-        viewPager = findViewById(R.id.view_pagerbottomnav);
-
-        navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
         viewPager.setCurrentItem(0);
+        setupViewPager(viewPager);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -122,13 +118,13 @@ public class DoctorMainActivity extends AppCompatActivity {
 
             }
         });
-        setupViewPager(viewPager);
+
+
 
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        ViewPagerStudentAdapter viewPagerAdapter = new ViewPagerStudentAdapter(getSupportFragmentManager());
         doctorHomeFragment = new DoctorHomeFragment();
         patientPageFragment = new DoctorPatientFragment();
         doctorPharmaceuticalFragment = new DoctorPharmaceuticalFragment();

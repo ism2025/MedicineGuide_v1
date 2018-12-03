@@ -111,7 +111,7 @@ public class Signup3PatientFragment extends Fragment {
 
     private void saveData() {
         //User
-        int role = Constants.PATIENT_ACCOUNT;
+        int role = Constants.PATIENT_ID;
         String name = bundle.getString("username");
         String email = bundle.getString("email");
         String password = bundle.getString("password");
