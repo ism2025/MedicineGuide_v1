@@ -58,4 +58,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="messages">messages</string>
     <string name="my_midicine">My Midicine</string>
+    <string name="choose_account_type">Choose Account Type</string>
+    <string name="foundtion_account">Foundtion Account</string>
+    <string name="student_account">Student Account</string>
+    <string name="patient_account">Patient Account</string>
+>>>>>>> 345f063d768284b8c71fa3925e28c6117ae55650
 </resources>

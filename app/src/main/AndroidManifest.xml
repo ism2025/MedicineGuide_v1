@@ -19,7 +19,6 @@
         <activity
             android:name=".Activites.DoctorMainActivity"
             android:label="@string/title_activity_main">
-
         </activity>
         <activity android:name=".Activites.PatientMainActivity" >
 

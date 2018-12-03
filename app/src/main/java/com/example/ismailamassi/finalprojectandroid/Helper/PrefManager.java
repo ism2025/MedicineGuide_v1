@@ -32,4 +32,25 @@ public class PrefManager {
         return pref.getBoolean(Constants.IS_FIRST_TIME_LAUNCH, true);
     }
 
+    public void setSignin(boolean isSignin) {
+        editor.putBoolean(Constants.IS_SIGN_IN, isSignin);
+        editor.commit();//apply();
+
+    }
+
+    public boolean isSignin() {
+        return pref.getBoolean(Constants.IS_SIGN_IN, false);
+    }
+
+    public void setTypeAccount(int typeAccount) {
+        editor.putInt(Constants.ROLE, typeAccount);
+        editor.commit();//apply();
+
+    }
+
+    public int getTypeAccount() {
+        return pref.getInt(Constants.ROLE, 0);
+    }
+
+
 }

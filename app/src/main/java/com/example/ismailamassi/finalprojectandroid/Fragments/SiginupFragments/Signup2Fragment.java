@@ -1,5 +1,6 @@
 package com.example.ismailamassi.finalprojectandroid.Fragments.SiginupFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.SignupActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
@@ -20,6 +23,8 @@ public class Signup2Fragment extends Fragment {
     Bundle bundle;
     EditText et_phonenum, et_dob;
     SignupActivity activity;
+    TextView tv_haveacc;
+    Intent signinIntent;
 
     public Signup2Fragment() {
     }
@@ -33,6 +38,8 @@ public class Signup2Fragment extends Fragment {
 
         et_phonenum = view.findViewById(R.id.et_phonenum);
         et_dob = view.findViewById(R.id.et_dob);
+        tv_haveacc = view.findViewById(R.id.tv_haveacc);
+
         return view;
     }
 
@@ -40,6 +47,7 @@ public class Signup2Fragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bundle = getArguments();
+        signinIntent = new Intent(getActivity(), SigninActivity.class);
         onClickItems();
 
     }
@@ -62,13 +70,19 @@ public class Signup2Fragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).commit();
             }
         });
+        tv_haveacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(signinIntent);
+            }
+        });
 
     }
 
     private int ValidationData() {
         String phoneNumber = Methods.getStringFromEditText(et_phonenum);
         String Dob = Methods.getStringFromEditText(et_dob);
-        if (FUtilsValidation.isEmpty(et_phonenum, "This field is required") || FUtilsValidation.isEmpty(et_dob, "This field is required")) {
+        if (FUtilsValidation.isEmpty(et_phonenum, Constants.FIELD_REQUIRED) || FUtilsValidation.isEmpty(et_dob, Constants.FIELD_REQUIRED)) {
             return -1;
         } else {
             bundle.putString("phoneNumber", phoneNumber);

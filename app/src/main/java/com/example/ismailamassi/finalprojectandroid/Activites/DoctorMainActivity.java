@@ -14,6 +14,9 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.Do
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPharmaceuticalFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorSavedFragment;
+
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class DoctorMainActivity extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class DoctorMainActivity extends AppCompatActivity {
     DoctorSavedFragment doctorSavedFragment;
     DoctorMessageFragment doctorMessageFragment;
 
+    private PrefManager prefManager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,12 +62,27 @@ public class DoctorMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maindoctor);
+        prefManager = new PrefManager(this);
+        int role = prefManager.getTypeAccount();
+        if (role == Constants.STUDENT_ACCOUNT) {
+//            setContentView(R.layout.);
+        } else if (role == Constants.PATIENT_ACCOUNT) {
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        } else if (role == Constants.DOCTOR_ACCOUNT) {
+
+        } else if (role == Constants.FOUNDTION_ACCOUNT) {
+
+        } else if (role == Constants.ADMIN_ACCOUNT) {
+
+        }
+//        setContentView(R.layout.activity_main);
+
         viewPager = findViewById(R.id.view_pagerbottomnav);
 
         final BottomNavigationView navigation =  findViewById(R.id.navigation);
-        viewPager.setCurrentItem(0);
+
+        navigation.setItemBackgroundResource(R.color.colorPrimaryDark);
+            viewPager.setCurrentItem(0);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -73,7 +92,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if(prevMenuItem!=null){
+                if (prevMenuItem != null) {
                     prevMenuItem.setChecked(false);
 
                 } else {
