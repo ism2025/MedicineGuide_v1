@@ -44,7 +44,7 @@ public class DoctorPharmaceuticalFragment extends Fragment {
         btn_group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace()
             }
         });
         btn_department.setOnClickListener(new View.OnClickListener() {
