@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "673149058773",
+    "firebase_url": "https://medicineguidev1.firebaseio.com",
+    "project_id": "medicineguidev1",
+    "storage_bucket": "medicineguidev1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673149058773:android:adbb19b4bc0f0b77",
+        "android_client_info": {
+          "package_name": "com.example.ismailamassi.finalprojectandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673149058773-3rc5aff6s3bg9ksp932jb9lnkuj29qkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ismailamassi.finalprojectandroid",
+            "certificate_hash": "7a63154e208fd2480cff1e93ae0e8cc740283485"
+          }
+        },
+        {
+          "client_id": "673149058773-f1u50lodsuun9273vvcbg63k0q9u1ci6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWh5cF6un9KA0VcgBnYhC83TtihesRDKQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673149058773-f1u50lodsuun9273vvcbg63k0q9u1ci6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
