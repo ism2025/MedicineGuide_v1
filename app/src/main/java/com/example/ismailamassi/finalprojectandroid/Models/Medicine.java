@@ -16,7 +16,6 @@ public class Medicine implements Serializable {
     private String about;
     private String uses;
     private String sideEffect;
-
     private static int count = 1;
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
