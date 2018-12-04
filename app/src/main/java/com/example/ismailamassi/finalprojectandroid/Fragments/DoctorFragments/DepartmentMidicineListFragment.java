@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Adapters.DepartmentDoctorMedicineAdapter;
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Models.MedicineDepartment;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 /**
@@ -21,6 +23,7 @@ import com.example.ismailamassi.finalprojectandroid.R;
 public class DepartmentMidicineListFragment extends Fragment {
 
     RecyclerView rv_medicinedepartment;
+
 
     public DepartmentMidicineListFragment() {
         // Required empty public constructor
@@ -39,9 +42,9 @@ public class DepartmentMidicineListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DepartmentDoctorMedicineAdapter departmentDoctorMedicineAdapter = new DepartmentDoctorMedicineAdapter(getActivity(), SystemControl.allDepartments);
+        DepartmentDoctorMedicineAdapter departmentDoctorMedicineAdapter = new DepartmentDoctorMedicineAdapter(getActivity().getApplicationContext(), SystemControl.allDepartments);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL, false);
-        rv_medicinedepartment.setAdapter(departmentDoctorMedicineAdapter);
         rv_medicinedepartment.setLayoutManager(layoutManager);
+        rv_medicinedepartment.setAdapter(departmentDoctorMedicineAdapter);
     }
 }

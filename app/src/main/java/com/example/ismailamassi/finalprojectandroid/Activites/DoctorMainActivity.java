@@ -14,6 +14,7 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.Do
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorMessageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;

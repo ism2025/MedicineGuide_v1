@@ -26,7 +26,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
 
     @Override
     public DepartmentDoctorMedicineAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_group, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_department, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -37,7 +37,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGroupMedicine(department);
+                openDepartmentMedicine(department);
             }
         });
     }
@@ -51,6 +51,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         CardView container;
         TextView tv_departmentname;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
             tv_departmentname = itemView.findViewById(R.id.tv_departmentname);
@@ -58,7 +59,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         }
     }
 
-    private void openGroupMedicine(MedicineDepartment department) {
+    private void openDepartmentMedicine(MedicineDepartment department) {
 //        context.startActivity(new Intent(context,));
     }
 }
