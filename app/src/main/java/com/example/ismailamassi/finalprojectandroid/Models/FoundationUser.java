@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MedicalFoundation extends User implements Serializable {
+public class FoundationUser extends User implements Serializable {
 
 
     private String location;
@@ -25,7 +25,7 @@ public class MedicalFoundation extends User implements Serializable {
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
-    public MedicalFoundation(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+    public FoundationUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
         this.setId("");
         this.setLocation(location);
@@ -42,7 +42,7 @@ public class MedicalFoundation extends User implements Serializable {
             }
         }
         foundationDoctor = new ArrayList<>();
-        SystemControl.allMedicalFoundations.add(this);
+        SystemControl.allFoundationUsers.add(this);
     }
 
 

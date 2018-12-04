@@ -2,11 +2,17 @@ package com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.example.ismailamassi.finalprojectandroid.Adapters.DepartmentDoctorMedicineAdapter;
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 /**
@@ -14,6 +20,7 @@ import com.example.ismailamassi.finalprojectandroid.R;
  */
 public class DepartmentMidicineListFragment extends Fragment {
 
+    RecyclerView rv_medicinedepartment;
 
     public DepartmentMidicineListFragment() {
         // Required empty public constructor
@@ -24,7 +31,17 @@ public class DepartmentMidicineListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_department_midicine_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_department_midicine_list, container, false);
+        rv_medicinedepartment = view.findViewById(R.id.rv_medicinedepartment);
+        return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        DepartmentDoctorMedicineAdapter departmentDoctorMedicineAdapter = new DepartmentDoctorMedicineAdapter(getActivity(), SystemControl.allDepartments);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL, false);
+        rv_medicinedepartment.setAdapter(departmentDoctorMedicineAdapter);
+        rv_medicinedepartment.setLayoutManager(layoutManager);
+    }
 }

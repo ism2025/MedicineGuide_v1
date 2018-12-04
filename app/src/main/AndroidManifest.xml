@@ -9,21 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activites.SigninActivity">        </activity>
+        <activity android:name=".Activites.SigninActivity"></activity>
         <activity android:name=".Activites.SignupActivity" />
-        <activity android:name=".Activites.SplashScreenActivity" >
-        </activity>
-        <activity android:name=".Activites.IntroSliderActivity" />
-        <activity android:name=".Activites.ForgetPasswordActivity" />
-        <activity
-            android:name=".Activites.DoctorMainActivity"
-            android:label="@string/title_activity_main">
+        <activity android:name=".Activites.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-               </activity>
-        <activity android:name=".Activites.PatientMainActivity" >
+        </activity>
+        <activity android:name=".Activites.IntroSliderActivity" />
+        <activity android:name=".Activites.ForgetPasswordActivity" />
+        <activity android:name=".Activites.DoctorMainActivity"> </activity>
+
+        <activity android:name=".Activites.PatientMainActivity">
 
         </activity>
         <activity android:name=".Activites.FoundationMainActivity" />

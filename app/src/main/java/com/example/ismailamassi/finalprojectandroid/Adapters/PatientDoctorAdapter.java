@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdapter.ViewHolder>  {
-    ArrayList<PatientUser> patientUsers ;
+public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdapter.ViewHolder> {
+    ArrayList<PatientUser> patientUsers;
     Context context;
 
-    public PatientDoctorAdapter(ArrayList<PatientUser> patientUsers, Context context) {
+    public PatientDoctorAdapter(Context context, ArrayList<PatientUser> patientUsers) {
         this.patientUsers = patientUsers;
         this.context = context;
     }
@@ -35,7 +35,7 @@ public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         final PatientUser patientUser = patientUsers.get(position);
         holder.textView.setText(patientUser.getName());
-        int id=context.getResources().getIdentifier(patientUser.getPhotoUrl(),"drawable","com.example.ismailamassi.finalprojectandroid");
+        int id = context.getResources().getIdentifier(patientUser.getPhotoUrl(), "drawable", "com.example.ismailamassi.finalprojectandroid");
         holder.circleImageView.setImageResource(id);
     }
 
@@ -47,9 +47,10 @@ public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdap
     class ViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
         TextView textView;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            circleImageView=itemView.findViewById(R.id.civ_patientimage);
+            circleImageView = itemView.findViewById(R.id.civ_patientimage);
             textView = itemView.findViewById(R.id.tv_patientname);
         }
     }

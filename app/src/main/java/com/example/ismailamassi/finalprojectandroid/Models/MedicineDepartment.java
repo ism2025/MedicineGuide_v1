@@ -1,5 +1,6 @@
 package com.example.ismailamassi.finalprojectandroid.Models;
 
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class MedicineDepartment {
         }
         this.setName(name);
         departmentItems = new ArrayList<>();
+        SystemControl.allDepartments.add(this);
     }
 
     public String getId() {

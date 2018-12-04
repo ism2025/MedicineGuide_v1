@@ -11,7 +11,10 @@ import com.example.ismailamassi.finalprojectandroid.Activites.PatientMainActivit
 import com.example.ismailamassi.finalprojectandroid.Activites.StudentMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
-import com.example.ismailamassi.finalprojectandroid.Models.MedicalFoundation;
+import com.example.ismailamassi.finalprojectandroid.Models.FoundationUser;
+import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
+import com.example.ismailamassi.finalprojectandroid.Models.MedicineDepartment;
+import com.example.ismailamassi.finalprojectandroid.Models.MedicineGroup;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
 import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
@@ -23,11 +26,12 @@ public class SystemControl {
     public static ArrayList<PatientUser> allPatients = new ArrayList<>();
     public static ArrayList<StudentUser> allStudents = new ArrayList<>();
     public static ArrayList<DoctorUser> allDoctors = new ArrayList<>();
-    public static ArrayList<MedicalFoundation> allMedicalFoundations = new ArrayList<>();
+    public static ArrayList<FoundationUser> allFoundationUsers = new ArrayList<>();
+    public static ArrayList<MedicineGroup> allGroups = new ArrayList<>();
+    public static ArrayList<MedicineDepartment> allDepartments = new ArrayList<>();
+    public static ArrayList<Medicine> allMedicine = new ArrayList<>();
 
 
-    //    public static ArrayList<User> allUsers = new ArrayList<>();
-//    public static ArrayList<User> allUsers = new ArrayList<>();
 //    public static ArrayList<User> allUsers = new ArrayList<>();
 //    public static ArrayList<User> allUsers = new ArrayList<>();
 

@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerAdapter;
 import com.example.ismailamassi.finalprojectandroid.Adapters.ViewPagerStudentAdapter;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorHomeFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
@@ -18,11 +17,9 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorMessageFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPatientFragment;
-import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorPharmaceuticalFragment;
+import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorMedicineFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.DoctorSavedFragment;
 
-import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
-import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class DoctorMainActivity extends AppCompatActivity {
@@ -33,7 +30,7 @@ public class DoctorMainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     DoctorHomeFragment doctorHomeFragment;
     DoctorPatientFragment patientPageFragment;
-    DoctorPharmaceuticalFragment doctorPharmaceuticalFragment;
+    DoctorMedicineFragment doctorMedicineFragment;
     DoctorSavedFragment doctorSavedFragment;
     DoctorMessageFragment doctorMessageFragment;
 
@@ -127,12 +124,12 @@ public class DoctorMainActivity extends AppCompatActivity {
         ViewPagerStudentAdapter viewPagerAdapter = new ViewPagerStudentAdapter(getSupportFragmentManager());
         doctorHomeFragment = new DoctorHomeFragment();
         patientPageFragment = new DoctorPatientFragment();
-        doctorPharmaceuticalFragment = new DoctorPharmaceuticalFragment();
+        doctorMedicineFragment = new DoctorMedicineFragment();
         doctorSavedFragment = new DoctorSavedFragment();
         doctorMessageFragment = new DoctorMessageFragment();
         viewPagerAdapter.addFragment(doctorHomeFragment);
         viewPagerAdapter.addFragment(patientPageFragment);
-        viewPagerAdapter.addFragment(doctorPharmaceuticalFragment);
+        viewPagerAdapter.addFragment(doctorMedicineFragment);
         viewPagerAdapter.addFragment(doctorSavedFragment);
         viewPagerAdapter.addFragment(doctorMessageFragment);
         viewPager.setAdapter(viewPagerAdapter);

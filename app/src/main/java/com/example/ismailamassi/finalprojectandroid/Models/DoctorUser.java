@@ -12,7 +12,7 @@ import java.util.Locale;
 public class DoctorUser extends User implements Serializable {
     private ArrayList<PatientUser> DoctorPatients;
     private float doctorRate;
-    private MedicalFoundation medicalFoundation;
+    private FoundationUser foundationUser;
 
     private static int count = 1;
     private String yearSplit;
@@ -54,11 +54,11 @@ public class DoctorUser extends User implements Serializable {
         this.doctorRate = doctorRate;
     }
 
-    public MedicalFoundation getMedicalFoundation() {
-        return medicalFoundation;
+    public FoundationUser getFoundationUser() {
+        return foundationUser;
     }
 
-    public void setMedicalFoundation(MedicalFoundation medicalFoundation) {
-        this.medicalFoundation = medicalFoundation;
+    public void setFoundationUser(FoundationUser foundationUser) {
+        this.foundationUser = foundationUser;
     }
 }

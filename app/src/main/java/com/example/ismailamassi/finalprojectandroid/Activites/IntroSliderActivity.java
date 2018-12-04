@@ -49,7 +49,6 @@ public class IntroSliderActivity extends AppCompatActivity {
                 launchSignInScreen();
             } else {
                 launchSignInScreen();
-
             }
             finish();
         }

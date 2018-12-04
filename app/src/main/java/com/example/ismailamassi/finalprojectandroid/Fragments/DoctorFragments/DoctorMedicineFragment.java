@@ -16,12 +16,12 @@ import com.example.ismailamassi.finalprojectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DoctorPharmaceuticalFragment extends Fragment {
+public class DoctorMedicineFragment extends Fragment {
 
     Button btn_group, btn_department;
     LinearLayout viewPager;
 
-    public DoctorPharmaceuticalFragment() {
+    public DoctorMedicineFragment() {
         // Required empty public constructor
     }
 
@@ -63,9 +63,5 @@ public class DoctorPharmaceuticalFragment extends Fragment {
                 btn_department.setVisibility(View.GONE);
             }
         });
-    }
-
-    private void startFragment() {
-
     }
 }
