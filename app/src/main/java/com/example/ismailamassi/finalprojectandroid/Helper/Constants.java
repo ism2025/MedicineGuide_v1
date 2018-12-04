@@ -22,6 +22,7 @@ public class Constants {
 
     public static final String CURRENT_USER = "current_user";
     public static final String FIELD_REQUIRED = "This field is required";
+    public static User user =null;
     public static User CURRENT_USER_SIGN_IN = null;
 
 

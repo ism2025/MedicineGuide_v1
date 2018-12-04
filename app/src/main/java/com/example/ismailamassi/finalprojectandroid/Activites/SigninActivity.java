@@ -13,14 +13,9 @@ import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
-import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
-import com.example.ismailamassi.finalprojectandroid.Models.Drug;
-import com.example.ismailamassi.finalprojectandroid.Models.MedicalFoundation;
-import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
-import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
-import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
+import com.example.ismailamassi.finalprojectandroid.TestData;
 
 public class SigninActivity extends AppCompatActivity {
 
@@ -36,19 +31,8 @@ public class SigninActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-
         bindView();
-//        StudentUser studentUser =
-        new StudentUser("student", "student@mail.com", "123456", "0592182025", Constants.STUDENT_ID, null, "");
-        DoctorUser doctorUser =
-                new DoctorUser("doctor", "doctor@mail.com", "123456", "0592182025", Constants.DOCTOR_ID, null, "");
-        PatientUser patientUser =
-                new PatientUser("patient", "patient@mail.com", "123456", "0592182025", Constants.PATIENT_ID, null, "");
-//        MedicalFoundation medicalFoundation =
-//        new MedicalFoundation("foundation", "foundation@mail.com", "123456", "0592182025", Constants.FOUNDATION_ID, null, "");
-//        Medicine medicine = new Medicine();
-//        medicine.setName("Test");
-//        Drug drug = new Drug(doctorUser, patientUser, medicine, "Monday", "Misslle", 20);
+        TestData.GenerateData();
         signupIntent = new Intent(SigninActivity.this, SignupActivity.class);
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
         prefManager = new PrefManager(this);
@@ -75,9 +59,8 @@ public class SigninActivity extends AppCompatActivity {
                 User user = SystemControl.SigninOperation(email, password);
                 if (user != null) {
                     prefManager.setSignin(true);
-//                    prefManager.setTypeAccount(user.getRole());
+                    prefManager.setTypeAccount(user.getRole());
                     prefManager.setIdAccount(user.getId());
-                    Constants.CURRENT_USER_SIGN_IN = user;
                     SystemControl.openMainActicityByUserType(SigninActivity.this,
                             SystemControl.getUserById(prefManager.getIdAccount()));
                 } else

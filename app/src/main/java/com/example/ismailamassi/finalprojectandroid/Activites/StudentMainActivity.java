@@ -1,6 +1,8 @@
 package com.example.ismailamassi.finalprojectandroid.Activites;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +57,7 @@ public class StudentMainActivity extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onPageSelected(int position) {
                 if (prevMenuItem != null) {
