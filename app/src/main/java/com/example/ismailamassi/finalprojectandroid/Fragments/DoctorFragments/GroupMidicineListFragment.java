@@ -40,5 +40,6 @@ public class GroupMidicineListFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rv_medidinegroup.setAdapter(groupDoctorMedicineAdapter);
         rv_medidinegroup.setLayoutManager(layoutManager);
+
     }
 }

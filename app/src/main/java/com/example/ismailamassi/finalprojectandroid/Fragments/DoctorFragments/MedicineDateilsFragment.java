@@ -12,10 +12,10 @@ import com.example.ismailamassi.finalprojectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MidicineDateilsFragment extends Fragment {
+public class MedicineDateilsFragment extends Fragment {
 
 
-    public MidicineDateilsFragment() {
+    public MedicineDateilsFragment() {
         // Required empty public constructor
     }
 

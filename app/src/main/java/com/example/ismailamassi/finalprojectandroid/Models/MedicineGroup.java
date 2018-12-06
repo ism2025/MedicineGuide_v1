@@ -3,11 +3,12 @@ package com.example.ismailamassi.finalprojectandroid.Models;
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MedicineGroup {
+public class MedicineGroup implements Serializable{
     private String id;
     private String name;
     private ArrayList<Medicine> groupItems;

@@ -15,8 +15,19 @@ public class Medicine implements Serializable {
     private MedicineDepartment medicineDepartment;
     private String about;
     private String uses;
+    private String photoUrl;
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
     private String sideEffect;
     private static int count = 1;
+
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 

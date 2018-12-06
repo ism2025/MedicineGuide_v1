@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.ismailamassi.finalprojectandroid.Adapters.PatientDoctorAdapter;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 /**
@@ -34,6 +35,7 @@ public class DoctorMedicineFragment extends Fragment {
         btn_group = view.findViewById(R.id.btn_group);
         btn_department = view.findViewById(R.id.btn_department);
         viewPager = view.findViewById(R.id.view_pagermidicinedoctor);
+
         return view;
 
     }
@@ -41,7 +43,6 @@ public class DoctorMedicineFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         onClickItems();
     }
 
@@ -49,19 +50,21 @@ public class DoctorMedicineFragment extends Fragment {
         btn_group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnVisibleGone();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, new GroupMidicineListFragment()).commit();
-                btn_group.setVisibility(View.GONE);
-                btn_department.setVisibility(View.GONE);
-
             }
         });
         btn_department.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnVisibleGone();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, new DepartmentMidicineListFragment()).commit();
-                btn_group.setVisibility(View.GONE);
-                btn_department.setVisibility(View.GONE);
             }
         });
+    }
+    private void btnVisibleGone(){
+        btn_group.setVisibility(View.GONE);
+        btn_department.setVisibility(View.GONE);
+        viewPager.setVisibility(View.VISIBLE);
     }
 }

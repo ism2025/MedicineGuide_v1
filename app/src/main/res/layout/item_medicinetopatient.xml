@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/iv_drugphoto"
+            android:id="@+id/iv_medicineimg"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginBottom="5dp"
@@ -33,9 +33,9 @@
             android:layout_marginStart="8dp"
             android:text="Medicine Name"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_drugphoto"
-            app:layout_constraintStart_toEndOf="@+id/iv_drugphoto"
-            app:layout_constraintTop_toTopOf="@+id/iv_drugphoto" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_medicineimg"
+            app:layout_constraintStart_toEndOf="@+id/iv_medicineimg"
+            app:layout_constraintTop_toTopOf="@+id/iv_medicineimg" />
 
         <TextView
             android:id="@+id/tv_drugquantity"

@@ -9,6 +9,8 @@ public class Constants {
     public static final String EMAIL = "email";
     public static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     public static final String IS_SIGN_IN = "IsSignIn";
+    public static final String DEPARTMENT_BANDLE = "department";
+    public static final String GROUP_BANDLE = "group";
     public static final int STUDENT_ID = 1;
     public static final int PATIENT_ID = 2;
     public static final int DOCTOR_ID = 3;

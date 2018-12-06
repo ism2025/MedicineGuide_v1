@@ -1,6 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
+import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MedicineItemFragment;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Models.MedicineDepartment;
-import com.example.ismailamassi.finalprojectandroid.Models.MedicineGroup;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 import java.util.List;
@@ -17,6 +20,7 @@ import java.util.List;
 public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<DepartmentDoctorMedicineAdapter.MyViewHolder> {
     Context context;
     List<MedicineDepartment> list;
+    Bundle bundle;
 
     public DepartmentDoctorMedicineAdapter(Context context, List<MedicineDepartment> list) {
         this.context = context;
@@ -26,7 +30,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
 
     @Override
     public DepartmentDoctorMedicineAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_group, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_department, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -37,7 +41,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGroupMedicine(department);
+                openDepartmentMedicine(department);
             }
         });
     }
@@ -51,6 +55,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         CardView container;
         TextView tv_departmentname;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
             tv_departmentname = itemView.findViewById(R.id.tv_departmentname);
@@ -58,7 +63,13 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         }
     }
 
-    private void openGroupMedicine(MedicineDepartment department) {
-//        context.startActivity(new Intent(context,));
+    private void openDepartmentMedicine(MedicineDepartment department) {
+        MedicineItemFragment medicineItemFragment =new MedicineItemFragment();
+        bundle = new Bundle();
+        bundle.putString("type",Constants.DEPARTMENT_BANDLE);
+        bundle.putSerializable(Constants.DEPARTMENT_BANDLE,department);
+        medicineItemFragment.setArguments(bundle);
+        ((DoctorMainActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
     }
+
 }

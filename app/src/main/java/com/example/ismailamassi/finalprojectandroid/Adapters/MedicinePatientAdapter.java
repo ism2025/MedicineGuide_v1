@@ -70,7 +70,7 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
             container = itemView.findViewById(R.id.container);
             tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
             tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
-            iv_drugphoto = itemView.findViewById(R.id.iv_drugphoto);
+            iv_drugphoto = itemView.findViewById(R.id.iv_medicineimg);
             cb_status = itemView.findViewById(R.id.cb_status);
         }
     }

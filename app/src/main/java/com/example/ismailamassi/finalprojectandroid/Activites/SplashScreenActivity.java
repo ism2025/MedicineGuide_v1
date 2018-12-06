@@ -17,10 +17,10 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splashscreen);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_splashscreen);
 
         sliderIntent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
         CountDownTimer count = new CountDownTimer(1500, 1000) {
