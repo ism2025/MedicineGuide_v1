@@ -1,6 +1,8 @@
 package com.example.ismailamassi.finalprojectandroid.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
+import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MidicineItemFragment;
+import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Models.MedicineGroup;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -17,7 +22,7 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
     Context context;
     List<MedicineGroup> list;
 
-    public GroupDoctorMedicineAdapter(Context context, List<MedicineGroup> list) {
+    public GroupDoctorMedicineAdapter(Context context, List<MedicineGroup> list ) {
         this.context = context;
         this.list = list;
     }
@@ -58,6 +63,11 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
     }
 
     private void openGroupMedicine(MedicineGroup group) {
-//        context.startActivity(new Intent(context,));
+        MidicineItemFragment midicineItemFragment = new MidicineItemFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("type",Constants.GROUP_BANDLE);
+        midicineItemFragment.setArguments(bundle);
+
+        ((DoctorMainActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
     }
 }

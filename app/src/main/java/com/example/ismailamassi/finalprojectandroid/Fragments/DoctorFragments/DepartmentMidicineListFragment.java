@@ -42,9 +42,10 @@ public class DepartmentMidicineListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DepartmentDoctorMedicineAdapter departmentDoctorMedicineAdapter = new DepartmentDoctorMedicineAdapter(getActivity().getApplicationContext(), SystemControl.allDepartments);
+        DepartmentDoctorMedicineAdapter departmentDoctorMedicineAdapter = new DepartmentDoctorMedicineAdapter(getActivity(), SystemControl.allDepartments);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL, false);
-        rv_medicinedepartment.setLayoutManager(layoutManager);
         rv_medicinedepartment.setAdapter(departmentDoctorMedicineAdapter);
+        rv_medicinedepartment.setLayoutManager(layoutManager);
     }
+
 }

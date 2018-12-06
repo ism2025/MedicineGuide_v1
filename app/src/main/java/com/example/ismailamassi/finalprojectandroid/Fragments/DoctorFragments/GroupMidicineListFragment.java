@@ -30,6 +30,7 @@ public class GroupMidicineListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_group_midicine_list, container, false);
         rv_medidinegroup = view.findViewById(R.id.rv_medicinegroup);
+
         return view;
     }
 
@@ -40,5 +41,6 @@ public class GroupMidicineListFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rv_medidinegroup.setAdapter(groupDoctorMedicineAdapter);
         rv_medidinegroup.setLayoutManager(layoutManager);
+
     }
 }
