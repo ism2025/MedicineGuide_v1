@@ -19,6 +19,7 @@ import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 public class PatientMainActivity extends AppCompatActivity {
+
     ViewPager viewPagerPatient;
     BottomNavigationView bottomNavigationItemViewPatient;
     MenuItem PrevMenuItem;

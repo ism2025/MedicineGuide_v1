@@ -2,6 +2,7 @@ package com.example.ismailamassi.finalprojectandroid.Helper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 /**
  * Created by Lincoln on 05/05/16.
@@ -9,6 +10,9 @@ import android.content.SharedPreferences;
 public class PrefManager {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
+
+    SharedPreferences prefTest;
+    SharedPreferences.Editor editorTest;
     Context mContext;
 
     // shared pref mode
@@ -20,6 +24,13 @@ public class PrefManager {
     public PrefManager(Context context) {
         this.mContext = context;
         pref = mContext.getSharedPreferences(Constants.PREF_NAME, PRIVATE_MODE);
+        editor = pref.edit();
+    }
+
+
+    public PrefManager(Context context, int x) {
+        this.mContext = context;
+        pref = PreferenceManager.getDefaultSharedPreferences(context);
         editor = pref.edit();
     }
 
@@ -60,7 +71,7 @@ public class PrefManager {
     }
 
     public String getEmailAccount() {
-        return pref.getString(Constants.EMAIL,"A/N");
+        return pref.getString(Constants.EMAIL, "A/N");
     }
 
 
@@ -71,7 +82,7 @@ public class PrefManager {
     }
 
     public String getIdAccount() {
-        return pref.getString(Constants.ID,"A/N");
+        return pref.getString(Constants.ID, "A/N");
     }
 
 }
