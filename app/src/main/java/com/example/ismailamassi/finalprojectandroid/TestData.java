@@ -52,10 +52,62 @@ public class TestData {
         MedicineDepartment md5 = new MedicineDepartment("department5");
 
         Medicine m1 = new Medicine("medicine1", "about1", "uses1", "side effect1", mg1, md1);
+        m1.getTraditionalNames().add("Tradition name1");
+        m1.getTraditionalNames().add("Tradition name2");
+        m1.getTraditionalNames().add("Tradition name3");
+        m1.getTraditionalNames().add("Tradition name4");
+        m1.getTraditionalNames().add("Tradition name5");
+        m1.setSideEffect("Side Effect fkls jfd nfnf " +
+                "jnef fnk jenffkj ewfefn jkew " +
+                "fbkqbff nefbk jewbfn fwekfj");
+        m1.setAbout("About Medicine Number 1 About Medicine Number 1" +
+                " About Medicine Number 1 About Medicine Number 1 ");
+        m1.setUses("This Will Take For You How Can Use this Medicine In Correct Way ." +
+                "This Will Take For You How Can Use this Medicine In Correct Way ." +
+                "This Will Take For You How Can Use this Medicine In Correct Way .");
+        m1.setStorage("This Will Take For You How Can Strorge this Medicine In Correct Way to Save Medicine.");
         Medicine m2 = new Medicine("medicine2", "about2", "uses2", "side effect2", mg1, md1);
         Medicine m3 = new Medicine("medicine3", "about3", "uses3", "side effect3", mg1, md1);
         Medicine m4 = new Medicine("medicine4", "about4", "uses4", "side effect4", mg1, md1);
         Medicine m5 = new Medicine("medicine5", "about5", "uses5", "side effect5", mg1, md1);
+
+
+        pu1.getMedicines().add(m1);
+        pu1.getMedicines().add(m2);
+        pu1.getMedicines().add(m3);
+        pu1.getMedicines().add(m4);
+        pu1.getMedicines().add(m5);
+
+
+
+        pu2.getMedicines().add(m1);
+        pu2.getMedicines().add(m2);
+        pu2.getMedicines().add(m3);
+        pu2.getMedicines().add(m4);
+        pu3.getMedicines().add(m5);
+
+
+
+        pu4.getMedicines().add(m1);
+        pu3.getMedicines().add(m2);
+        pu2.getMedicines().add(m3);
+        pu1.getMedicines().add(m4);
+        pu5.getMedicines().add(m5);
+
+
+
+        pu5.getMedicines().add(m1);
+        pu4.getMedicines().add(m2);
+        pu5.getMedicines().add(m3);
+        pu4.getMedicines().add(m4);
+        pu3.getMedicines().add(m5);
+
+
+        pu4.getMedicines().add(m1);
+        pu4.getMedicines().add(m2);
+        pu3.getMedicines().add(m3);
+        pu2.getMedicines().add(m4);
+        pu3.getMedicines().add(m5);
 
         Medicine m11 = new Medicine("medicine1", "about1", "uses1", "side effect1", mg1, md2);
         Medicine m22 = new Medicine("medicine2", "about2", "uses2", "side effect2", mg1, md2);

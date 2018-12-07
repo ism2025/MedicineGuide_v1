@@ -62,4 +62,7 @@
     <string name="patient_account">Patient Account</string>
     <string name="messages">messages</string>
     <string name="my_midicine">My Midicine</string>
+    <string name="mail">Mail</string>
+    <string name="share">Share</string>
+    <string name="action_settings">afe</string>
 </resources>

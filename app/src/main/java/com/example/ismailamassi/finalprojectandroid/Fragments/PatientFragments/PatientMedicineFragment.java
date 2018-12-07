@@ -49,7 +49,8 @@ public class PatientMedicineFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        PrefManager prefManager = new PrefManager(getContext());
+        PatientUser user = (PatientUser) SystemControl.getUserById(prefManager.getIdAccount());
         MedicinePatientAdapter medicinePatientAdapter = new MedicinePatientAdapter(activity, SystemControl.allPatients.get(0).getDrugs());
         rv_patientmedicine.setAdapter(medicinePatientAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);

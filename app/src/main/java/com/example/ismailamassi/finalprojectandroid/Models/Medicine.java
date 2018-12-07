@@ -10,27 +10,20 @@ import java.util.Locale;
 public class Medicine implements Serializable {
     private String id;
     private String name;
-    private ArrayList<String> traditionalNames;
-    private MedicineGroup medicineGroup;
-    private MedicineDepartment medicineDepartment;
     private String about;
     private String uses;
     private String photoUrl;
-
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
-
+    private String storage;
     private String sideEffect;
+    private ArrayList<String> traditionalNames;
+    private MedicineGroup medicineGroup;
+    private MedicineDepartment medicineDepartment;
+
+
     private static int count = 1;
-
     private String yearSplit;
-    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
+    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
     public Medicine(String name, String about, String uses, String sideEffect, MedicineGroup group, MedicineDepartment department) {
         yearSplit = year.substring(2, 4);
         if (count <= 99999) {
@@ -48,6 +41,7 @@ public class Medicine implements Serializable {
         this.setAbout(about);
         this.setUses(uses);
         this.setSideEffect(sideEffect);
+        traditionalNames = new ArrayList<>();
         group.setGroupItem(this);
         department.addDepartmentItem(this);
     }
@@ -118,5 +112,21 @@ public class Medicine implements Serializable {
 
     public void setSideEffect(String sideEffect) {
         this.sideEffect = sideEffect;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public String getStorage() {
+        return storage;
+    }
+
+    public void setStorage(String storage) {
+        this.storage = storage;
     }
 }

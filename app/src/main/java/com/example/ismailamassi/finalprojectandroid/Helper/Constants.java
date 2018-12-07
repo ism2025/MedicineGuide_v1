@@ -11,6 +11,7 @@ public class Constants {
     public static final String IS_SIGN_IN = "IsSignIn";
     public static final String DEPARTMENT_BANDLE = "department";
     public static final String GROUP_BANDLE = "group";
+    public static final String MEDICINE_BANDLE = "medicine";
     public static final int STUDENT_ID = 1;
     public static final int PATIENT_ID = 2;
     public static final int DOCTOR_ID = 3;
@@ -24,7 +25,7 @@ public class Constants {
 
     public static final String CURRENT_USER = "current_user";
     public static final String FIELD_REQUIRED = "This field is required";
-    public static User user =null;
+    public static User user = null;
     public static User CURRENT_USER_SIGN_IN = null;
 
 

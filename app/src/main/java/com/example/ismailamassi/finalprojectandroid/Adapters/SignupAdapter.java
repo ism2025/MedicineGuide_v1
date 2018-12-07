@@ -33,7 +33,6 @@ public class SignupAdapter extends FragmentPagerAdapter {
         return fragments.length;
     }
 
-
     public class NonSwipeableViewPager extends ViewPager {
 
         public NonSwipeableViewPager(Context context) {
@@ -82,6 +81,7 @@ public class SignupAdapter extends FragmentPagerAdapter {
             }
         }
     }
+
 }
 
 

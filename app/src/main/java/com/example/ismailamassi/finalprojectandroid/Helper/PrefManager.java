@@ -46,7 +46,6 @@ public class PrefManager {
     public void setSignin(boolean isSignin) {
         editor.putBoolean(Constants.IS_SIGN_IN, isSignin);
         editor.commit();//apply();
-
     }
 
     public boolean isSignin() {
