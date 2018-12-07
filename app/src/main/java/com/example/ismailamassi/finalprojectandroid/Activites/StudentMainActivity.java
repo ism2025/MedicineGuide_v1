@@ -15,7 +15,7 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments.S
 import com.example.ismailamassi.finalprojectandroid.Fragments.StudentFragments.StudentSavedFragment;
 import com.example.ismailamassi.finalprojectandroid.R;
 
-public class StudentMainActivity extends AppCompatActivity {
+public class StudentMainActivity extends AllActivity {
     ViewPager viewPagerStudent;
     BottomNavigationView bottomNavigationViewStudent;
     MenuItem prevMenuItem;

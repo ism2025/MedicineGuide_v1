@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.AllActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MidicineItemFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
@@ -68,6 +69,6 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
         bundle.putString("type",Constants.GROUP_BANDLE);
         midicineItemFragment.setArguments(bundle);
 
-        ((DoctorMainActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
+        ((AllActivityله)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
     }
 }

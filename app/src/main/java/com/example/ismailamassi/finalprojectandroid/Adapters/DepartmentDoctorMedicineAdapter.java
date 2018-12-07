@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.AllActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
+import com.example.ismailamassi.finalprojectandroid.Activites.StudentMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MidicineItemFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.FragmentsUtils;
@@ -71,7 +73,8 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         Bundle bundle = new Bundle();
         bundle.putString("type",Constants.DEPARTMENT_BANDLE);
         midicineItemFragment.setArguments(bundle);
-        ((DoctorMainActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor,midicineItemFragment).commit();
+        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor,midicineItemFragment).commit();
+
     }
 
 }
