@@ -3,38 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/action_settings"
-        app:showAsAction="never">
-        <menu>
+        android:id="@+id/addToPatient"
+        android:icon="@drawable/ic_mail_outline_black_24dp"
+        android:orderInCategory="100"
+        android:title="Add To Patient"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/AddToSaves"
+        android:icon="@drawable/ic_portable_wifi_off_black_48dp"
+        android:orderInCategory="101"
+        android:title="Add To Saves"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Report"
+        android:icon="@drawable/ic_mail_outline_black_24dp"
+        android:orderInCategory="102"
+        android:title="Report"
+        app:showAsAction="never" />
 
-            <item
-                android:id="@+id/action_rate"
-                android:icon="@drawable/ic_mail_outline_black_24dp"
-                android:orderInCategory="100"
-                android:title="dfa"
-                app:showAsAction="never" />
-            <item
-                android:id="@+id/action_share"
-                android:icon="@drawable/ic_portable_wifi_off_black_48dp"
-                android:orderInCategory="101"
-                android:title="fsaadf "
-                app:showAsAction="never" />
-            <item
-                android:id="@+id/action_enquiry"
-                android:icon="@drawable/ic_mail_outline_black_24dp"
-                android:orderInCategory="102"
-                android:title="@string/finish"
-                app:showAsAction="never" />
-            <item
-                android:id="@+id/action_disclaimer"
-                android:icon="@drawable/ic_launcher_background"
-                android:orderInCategory="103"
-                android:title="@string/title_activity_main"
-                app:showAsAction="never" />
 
-        </menu>
-    </item>
 </menu>
 

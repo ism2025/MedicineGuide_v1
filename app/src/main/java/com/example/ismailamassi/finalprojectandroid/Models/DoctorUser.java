@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.Locale;
 
 public class DoctorUser extends User implements Serializable {
-    private ArrayList<PatientUser> DoctorPatients;
     private float doctorRate;
     private FoundationUser foundationUser;
 
@@ -18,21 +17,25 @@ public class DoctorUser extends User implements Serializable {
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
-    public DoctorUser( String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+    private ArrayList<PatientUser> DoctorPatients;
+    private ArrayList<Medicine> savesMedicine;
+
+
+    public DoctorUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
         super(name, email, password, phoneNumber, role, dob, photoUrl);
-        this.setId("");
         yearSplit = year.substring(2, 4);
         if (role == Constants.DOCTOR_ID) {
             if (count <= 99999) {
-                String countWithZero = String.format(Locale.CANADA,"%04d", count);
+                String countWithZero = String.format(Locale.CANADA, "%04d", count);
                 this.setId(Constants.DOCTOR_ID + yearSplit + countWithZero);
                 count++;
             } else if (count > 99999) {
-                String countWithZero = String.format(Locale.CANADA,"%05d", count);
+                String countWithZero = String.format(Locale.CANADA, "%05d", count);
                 this.setId(Constants.DOCTOR_ID + yearSplit + countWithZero);
                 count++;
             }
         }
+        savesMedicine = new ArrayList<>();
         DoctorPatients = new ArrayList<>();
         SystemControl.allDoctors.add(this);
     }
@@ -60,5 +63,13 @@ public class DoctorUser extends User implements Serializable {
 
     public void setFoundationUser(FoundationUser foundationUser) {
         this.foundationUser = foundationUser;
+    }
+
+    public ArrayList<Medicine> getSavesMedicine() {
+        return savesMedicine;
+    }
+
+    public void setSavesMedicine(ArrayList<Medicine> savesMedicine) {
+        this.savesMedicine = savesMedicine;
     }
 }

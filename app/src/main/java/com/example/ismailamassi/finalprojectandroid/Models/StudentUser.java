@@ -4,6 +4,7 @@ import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -12,6 +13,16 @@ public class StudentUser extends User implements Serializable {
     private String educationalFoundation;
     private static int count = 1;
     private String yearSplit;
+
+    private ArrayList<Medicine> savesMedicine;
+
+    public ArrayList<Medicine> getSavesMedicine() {
+        return savesMedicine;
+    }
+
+    public void setSavesMedicine(ArrayList<Medicine> savesMedicine) {
+        this.savesMedicine = savesMedicine;
+    }
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
     public StudentUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
@@ -19,16 +30,17 @@ public class StudentUser extends User implements Serializable {
         yearSplit = year.substring(2, 4);
         if (role == Constants.STUDENT_ID) {
             if (count <= 99999) {
-                String countWithZero = String.format(Locale.CANADA,"%04d", count);
+                String countWithZero = String.format(Locale.CANADA, "%04d", count);
                 this.setId(Constants.STUDENT_ID + yearSplit + countWithZero);
                 count++;
             } else if (count > 99999) {
-                String countWithZero = String.format(Locale.CANADA,"%05d", count);
+                String countWithZero = String.format(Locale.CANADA, "%05d", count);
                 this.setId(Constants.STUDENT_ID + yearSplit + countWithZero);
                 count++;
             }
         }
         this.setEducationalFoundation(educationalFoundation);
+        savesMedicine = new ArrayList<>();
         SystemControl.allStudents.add(this);
     }
 

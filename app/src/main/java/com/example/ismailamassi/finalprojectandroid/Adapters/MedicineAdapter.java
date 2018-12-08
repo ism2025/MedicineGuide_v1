@@ -17,8 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MedicineDateilsFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
+import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -62,7 +65,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
         holder.container.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                openPopupMenu(v);
+                openPopupMenu(v, medicine, (DoctorUser) SystemControl.getUserById(new PrefManager(context).getIdAccount()));
                 return true;
             }
         });
@@ -97,23 +100,21 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
 
     }
 
-    public void openPopupMenu(View v) {
+    public void openPopupMenu(View v, final Medicine medicine, final DoctorUser doctorUser) {
         PopupMenu popupMenu = new PopupMenu(context, v);
         popupMenu.getMenuInflater().inflate(R.menu.popup_medicine, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.action_rate:
+                    case R.id.addToPatient:
                         Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
                         break;
-                    case R.id.action_share:
-                        Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
+                    case R.id.AddToSaves:
+                        doctorUser.getSavesMedicine().add(medicine);
+                        Toast.makeText(context, "Mission Successfully ", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.action_enquiry:
-                        Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
-                        break;
-                    case R.id.action_disclaimer:
-                        Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
+                    case R.id.Report:
+                        Toast.makeText(context, "Done Report About " + medicine.getName() + ", and We Will Review about this.", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
