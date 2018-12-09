@@ -128,6 +128,9 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:text="Next"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_primary_btn"
+
         app:layout_constraintBottom_toTopOf="@+id/tv_haveacc"
         app:layout_constraintEnd_toEndOf="parent" />
 

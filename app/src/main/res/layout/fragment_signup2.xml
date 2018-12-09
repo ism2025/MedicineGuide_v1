@@ -76,6 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Back"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_accent_btn"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_nextsignup2" />
 
@@ -86,6 +89,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:text="Next"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_primary_btn"
         app:layout_constraintBottom_toTopOf="@+id/tv_haveacc"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.AllActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MedicineItemFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
@@ -68,6 +69,6 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
         bundle.putString("type",Constants.GROUP_BANDLE);
         bundle.putSerializable(Constants.GROUP_BANDLE, group);
         medicineItemFragment.setArguments(bundle);
-        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
+        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
     }
 }

@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="280dp"
         android:text="@string/back"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_accent_btn"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_finish"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -35,6 +37,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/finish"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_primary_btn"
         app:layout_constraintBottom_toTopOf="@+id/tv_haveacc"
         app:layout_constraintEnd_toEndOf="parent" />
 

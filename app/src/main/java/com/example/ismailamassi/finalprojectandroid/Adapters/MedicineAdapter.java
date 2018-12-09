@@ -1,32 +1,27 @@
 package com.example.ismailamassi.finalprojectandroid.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
+import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.AddDrugToPatirntFragment;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MedicineDateilsFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
+import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
-
 import java.util.ArrayList;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyViewHolder> {
@@ -65,7 +60,12 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
         holder.container.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                openPopupMenu(v, medicine, (DoctorUser) SystemControl.getUserById(new PrefManager(context).getIdAccount()));
+                User user = SystemControl.getUserById(new PrefManager(context).getIdAccount());
+                if (user instanceof DoctorUser) {
+                    openPopupMenu(v, medicine, (DoctorUser) user);
+                }else{
+
+                }
                 return true;
             }
         });
@@ -96,7 +96,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
         bundle = new Bundle();
         bundle.putSerializable(Constants.MEDICINE_BANDLE, medicine);
         medicineDateilsFragment.setArguments(bundle);
-        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineDateilsFragment).commit();
+        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineDateilsFragment).addToBackStack(null).commit();
 
     }
 
@@ -107,6 +107,8 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.addToPatient:
+                        AddDrugToPatirntFragment addDrugToPatirntFragment = new AddDrugToPatirntFragment();
+                        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor,addDrugToPatirntFragment).addToBackStack(null).commit();
                         Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.AddToSaves:

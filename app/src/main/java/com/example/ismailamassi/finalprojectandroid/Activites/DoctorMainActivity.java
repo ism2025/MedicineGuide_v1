@@ -23,7 +23,7 @@ import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.Do
 
 import com.example.ismailamassi.finalprojectandroid.R;
 
-public class DoctorMainActivity extends AppCompatActivity {
+public class DoctorMainActivity extends AllActivity {
 
     private PrefManager prefManager;
     private MenuItem prevMenuItem;
@@ -82,7 +82,7 @@ public class DoctorMainActivity extends AppCompatActivity {
         }
 //        setContentView(R.layout.activity_main);
 
-        viewPager = findViewById(R.id.view_pagerbottomnav);
+        viewPager = findViewById(R.id.view_pagerbottomnavstudent);
 
         final BottomNavigationView navigation =  findViewById(R.id.navigation);
 

@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:id="@+id/aa"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aa"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activites.SignupActivity">
 
     <TextView
         android:id="@+id/tv_type"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:paddingStart="8dp"
         android:text="@string/choose_account_type"
+        android:textAlignment="textStart"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_patientacc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/bg_primary_btn"
         android:text="@string/patient_account"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tv_type"
         app:layout_constraintStart_toStartOf="@+id/tv_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
     <Button
         android:id="@+id/btn_studentacc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/bg_primary_btn"
         android:text="@string/student_account"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_patientacc"
         app:layout_constraintStart_toStartOf="@+id/btn_patientacc"
         app:layout_constraintTop_toBottomOf="@+id/btn_patientacc" />
 
     <Button
         android:id="@+id/btn_foundtionacc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/bg_primary_btn"
         android:text="@string/foundtion_account"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_studentacc"
         app:layout_constraintStart_toStartOf="@+id/btn_studentacc"
         app:layout_constraintTop_toBottomOf="@+id/btn_studentacc" />
 
@@ -51,13 +64,13 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="horizontal"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:orientation="horizontal" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

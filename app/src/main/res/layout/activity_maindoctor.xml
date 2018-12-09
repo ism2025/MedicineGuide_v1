@@ -9,7 +9,7 @@
     >
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/view_pagerbottomnav"
+        android:id="@+id/view_pagerbottomnavstudent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/navigation"

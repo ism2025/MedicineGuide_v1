@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
+import com.example.ismailamassi.finalprojectandroid.Activites.AllActivity;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.MedicineItemFragment;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Models.MedicineDepartment;
@@ -26,8 +26,7 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         this.context = context;
         this.list = list;
     }
-
-
+    
     @Override
     public DepartmentDoctorMedicineAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_department, parent, false);
@@ -69,7 +68,9 @@ public class DepartmentDoctorMedicineAdapter extends RecyclerView.Adapter<Depart
         bundle.putString("type",Constants.DEPARTMENT_BANDLE);
         bundle.putSerializable(Constants.DEPARTMENT_BANDLE,department);
         medicineItemFragment.setArguments(bundle);
-        ((DoctorMainActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
+
+        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor,medicineItemFragment).commit();
+
     }
 
 }

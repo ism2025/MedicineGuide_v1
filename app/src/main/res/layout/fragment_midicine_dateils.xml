@@ -248,6 +248,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="Add To Patient"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_primary_btn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

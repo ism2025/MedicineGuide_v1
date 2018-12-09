@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
@@ -24,6 +25,7 @@ import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
 import com.example.ismailamassi.finalprojectandroid.Models.Drug;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
+import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
 
 import java.util.ArrayList;
@@ -44,6 +46,7 @@ public class MedicineDateilsFragment extends Fragment {
     Button btn_addToPatirnt;
 
     PatientUser selectedPatient;
+    User user;
 
     public MedicineDateilsFragment() {
         // Required empty public constructor
@@ -68,6 +71,7 @@ public class MedicineDateilsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        bindViews(view);
         bundle = getArguments();
         try {
             medicine = (Medicine) bundle.getSerializable(Constants.MEDICINE_BANDLE);
@@ -82,47 +86,30 @@ public class MedicineDateilsFragment extends Fragment {
             tv_uses.setText(medicine.getUses());
             tv_storage.setText(medicine.getStorage());
             tv_about.setText(medicine.getAbout());
-            btn_addToDoctor.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    DoctorUser doctorUser = (DoctorUser) SystemControl.getUserById(new PrefManager(getContext()).getIdAccount());
-//                    openDurgDialog(doctorUser, medicine);
-                }
-            });
+            user = SystemControl.getUserById(new PrefManager(getContext().getApplicationContext()).getIdAccount());
+            if (user instanceof DoctorUser) {
+                btn_addToDoctor.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openDrugFragment(v, medicine, (DoctorUser) user);
+                    }
+                });
+            }
         } catch (ClassCastException e) {
             Toast.makeText(getContext(), "Something Error, Please Try Again Later .", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-//    void openDurgDialog(final DoctorUser doctor, Medicine medicine) {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_add_drug_to_patient, null);
-//        bindViews(view);
-//        et_doctorName.setText(doctor.getName());
-//        et_medicineName.setText(medicine.getName());
-//        final ArrayList<String> wee = new ArrayList<>();
-//        for (PatientUser patientUser : doctor.getDoctorPatients()) {
-//            wee.add(patientUser.getName());
-//        }
-//
-//        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, wee);
-//        spinner_patients.setAdapter(spinnerArrayAdapter);
-//        spinner_patients.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                selectedPatient = doctor.getDoctorPatients().get(position);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-////        Drug drug = new Drug(doctor, selectedPatient, medicine, "", "", 0);
-//        builder.setView(view).create().show();
-//    }
+    void openDrugFragment(View v, Medicine medicine, DoctorUser doctorUser) {
+
+        AddDrugToPatirntFragment addDrugToPatirntFragment = new AddDrugToPatirntFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Constants.MEDICINE_BANDLE, medicine);
+        bundle.putSerializable(Constants.DOCTOR_BANDLE, doctorUser);
+        addDrugToPatirntFragment.setArguments(bundle);
+        ((DoctorMainActivity) getContext().getApplicationContext()).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, addDrugToPatirntFragment).addToBackStack(null).commit();
+    }
 
     void bindViews(View view) {
         et_doctorName = view.findViewById(R.id.et_doctorName);
