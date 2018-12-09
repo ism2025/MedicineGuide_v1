@@ -50,8 +50,8 @@ public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdap
 
         public ViewHolder(View itemView) {
             super(itemView);
-            circleImageView = itemView.findViewById(R.id.civ_patientimage);
-            textView = itemView.findViewById(R.id.tv_patientname);
+            circleImageView = itemView.findViewById(R.id.patient_image);
+            textView = itemView.findViewById(R.id.patient_name);
         }
     }
 }
