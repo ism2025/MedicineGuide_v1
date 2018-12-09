@@ -69,6 +69,6 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
         bundle.putString("type",Constants.GROUP_BANDLE);
         midicineItemFragment.setArguments(bundle);
 
-        ((AllActivityله)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
+        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
     }
 }

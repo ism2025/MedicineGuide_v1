@@ -73,4 +73,5 @@ public class DoctorMedicineFragment extends Fragment {
         viewPager.setVisibility(View.GONE);
 
     }
+
 }

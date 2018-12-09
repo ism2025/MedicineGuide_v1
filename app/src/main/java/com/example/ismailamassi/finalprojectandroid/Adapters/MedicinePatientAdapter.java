@@ -65,27 +65,27 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
         CircleImageView iv_drugphoto;
         CheckBox cb_status;
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            container = itemView.findViewById(R.id.container);
-            tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
-            tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
-            iv_drugphoto = itemView.findViewById(R.id.iv_drugphoto);
-            cb_status = itemView.findViewById(R.id.cb_status);
-        }
-    }
-
-    private void openDrugInfoDialog(Drug drug) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context.getApplicationContext())
-                .setTitle(drug.getDayOfWeek())
-                .setMessage(
-                        drug.getMedicine().getName() + "\n"
-                                + drug.getDoctor().getName() + "\n"
-                                + drug.getDayOfWeek() + "\n"
-                                + drug.getDrugQuantity() + "\n"
-                                + drug.getDrugType() + "\n"
-                                + drug.isTake()
-                );
-        dialog.create().show();
+    public MyViewHolder(View itemView) {
+        super(itemView);
+        container = itemView.findViewById(R.id.container);
+        tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
+        tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
+        iv_drugphoto = itemView.findViewById(R.id.iv_drugphoto);
+        cb_status = itemView.findViewById(R.id.cb_status);
     }
 }
+
+private void openDrugInfoDialog(Drug drug) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context.getApplicationContext())
+        .setTitle(drug.getDayOfWeek())
+        .setMessage(
+        drug.getMedicine().getName() + "\n"
+        + drug.getDoctor().getName() + "\n"
+        + drug.getDayOfWeek() + "\n"
+        + drug.getDrugQuantity() + "\n"
+        + drug.getDrugType() + "\n"
+        + drug.isTake()
+        );
+        dialog.create().show();
+        }
+        }
