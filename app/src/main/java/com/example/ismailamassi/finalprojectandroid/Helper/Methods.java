@@ -1,6 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Helper;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,4 +19,6 @@ public class Methods {
     public static String getStringFromResources(Context context, int RecID) {
         return context.getResources().getString(RecID);
     }
+
+
 }
