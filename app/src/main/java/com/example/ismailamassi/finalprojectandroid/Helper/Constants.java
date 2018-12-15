@@ -28,5 +28,13 @@ public class Constants {
     public static User user = null;
     public static User CURRENT_USER_SIGN_IN = null;
 
+    //Constant To DataBase
+    public static final String TABLE_DOCTOR = "current_user";
+    public static final String TABLE_DOCTOR_RAW1 = "current_user";
+    public static final String TABLE_DOCTOR_RAW2 = "current_user";
+    public static final String TABLE_DOCTOR_RAW3 = "current_user";
+    public static final String TABLE_DOCTOR_RAW4 = "current_user";
+    public static final String TABLE_DOCTOR_RAW5 = "current_user";
+
 
 }

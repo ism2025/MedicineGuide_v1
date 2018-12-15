@@ -17,6 +17,16 @@ public class DoctorUser extends User implements Serializable {
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
+    private String section;
+
+    public String getSection() {
+        return section;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
     private ArrayList<PatientUser> DoctorPatients;
     private ArrayList<Medicine> savesMedicine;
 
