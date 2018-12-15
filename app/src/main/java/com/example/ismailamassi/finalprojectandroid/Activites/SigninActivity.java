@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.Helper.PrefManager;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
@@ -37,8 +38,7 @@ public class SigninActivity extends AppCompatActivity {
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
         prefManager = new PrefManager(this);
         onClickItems();
-
-    }
+        }
 
     private void bindView() {
         tv_createaccount = findViewById(R.id.tv_haveacc);
@@ -81,5 +81,6 @@ public class SigninActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }

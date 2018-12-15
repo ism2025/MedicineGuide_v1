@@ -28,13 +28,80 @@ public class Constants {
     public static User user = null;
     public static User CURRENT_USER_SIGN_IN = null;
 
-    //Constant To DataBase
-    public static final String TABLE_DOCTOR = "current_user";
-    public static final String TABLE_DOCTOR_RAW1 = "current_user";
-    public static final String TABLE_DOCTOR_RAW2 = "current_user";
-    public static final String TABLE_DOCTOR_RAW3 = "current_user";
-    public static final String TABLE_DOCTOR_RAW4 = "current_user";
-    public static final String TABLE_DOCTOR_RAW5 = "current_user";
+    //DATABASE CONSTANTS
+    public static final String DATABASE_NAME = "medicine_guide";
+    public static final String TABLE_FOUNDATION = "foundation";
+    public static final String TABLE_DOCTOR = "doctor";
+    public static final String TABLE_PATIENT = "patient";
+    //    public static final String TABLE_STUDENT = "student";
+    public static final String TABLE_MEDICINE = "Medicine";
+    public static final String TABLE_DRUG = "drug";
+    public static final String TABLE_DOCTOR_PATIENT = "doctor_patient";
+    public static final String TABLE_DEPARTMENT = "department";
+    public static final String TABLE_GROUP = "group_med";
+
+    //FOUNDATION COLs
+    public static final String COL_FOUND_ID = "_id";
+    public static final String COL_FOUND_NAME = "name";
+    public static final String COL_FOUND_LOCATION = "location";
+
+    //DOCTOR COLs
+    public static final String COL_DOCTOR_ID = "_id";
+    public static final String COL_DOCTOR_NAME = "name";
+    public static final String COL_DOCTOR_GENDER = "gender";
+    public static final String COL_DOCTOR_DOB = "dob";
+    public static final String COL_DOCTOR_EMAIL = "email";
+    public static final String COL_DOCTOR_PASSWORD = "password";
+    public static final String COL_DOCTOR_PHOTO = "photo";
+    public static final String COL_DOCTOR_PHONE_NUMBER = "phoneNumber";
+    public static final String COL_DOCTOR_RATE = "rate";
+    public static final String COL_DOCTOR_SECTION = "section";
+
+    //PATIENT COLS
+    public static final String COL_PATIENT_ID = "_id";
+    public static final String COL_PATIENT_NAME = "name";
+    public static final String COL_PATIENT_GENDER = "gender";
+    public static final String COL_PATIENT_DOB = "dob";
+    public static final String COL_PATIENT_EMAIL = "email";
+    public static final String COL_PATIENT_PASSWORD = "password";
+    public static final String COL_PATIENT_PHONR_NUMBER = "phoneNumber";
+    public static final String COL_PATIENT_PHOTO = "photo";
+    public static final String COL_PATIENT_WEIGHT = "weight";
+
+
+    //DRUG COLS
+    public static final String COL_DRUG_ID = "_id";
+    public static final String COL_DRUG_DAYOFWEEK = "dayOfWeek";
+    public static final String COL_DRUG_TYPE = "type";
+    public static final String COL_DRUG_QUANTITY = "quantity";
+    public static final String COL_DRUG_ISTAKE = "isTake";
+    public static final String COL_DRUG_DOCTOR_ID = "doctorId";
+    public static final String COL_DRUG_MEDICINE_ID = "medicine_id";
+    public static final String COL_DRUG_PATIENT_ID = "patient_id";
+
+
+    //MEDICINE COLS
+    public static final String COL_MEDICINE_ID = "_id";
+    public static final String COL_MEDICINE_NAME = "name";
+    public static final String COL_MEDICINE_ABOUT = "about";
+    public static final String COL_MEDICINE_USES = "uses";
+    public static final String COL_MEDICINE_PHOTO = "photo";
+    public static final String COL_MEDICINE_STORAGE = "storage";
+    public static final String COL_MEDICINE_SIDE_EFFECT = "side_effect";
+    public static final String COL_MEDICINE_DEPARTMENT_ID = "department_id";
+    public static final String COL_MEDICINE_GROUP_ID = "group_id";
+
+    //DEPARTMENT COLS
+    public static final String COL_DEPARTMENT_ID = "_id";
+    public static final String COL_DEPARTMENT_NAME = "name";
+
+    //GROUP COLS
+    public static final String COL_GROUP_ID = "_id";
+    public static final String COL_GROUP_NAME = "name";
+
+    //TABLE_DOCTOR_PATIENT COLs
+    public static final String COL_DOCTOR_PATIENT_DOCTOR_ID = "_id";
+    public static final String COL_DOCTOR_PATIENT_PATIENT_ID = "_id";
 
 
 }

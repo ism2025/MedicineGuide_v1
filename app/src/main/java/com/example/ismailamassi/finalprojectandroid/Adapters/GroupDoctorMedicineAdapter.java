@@ -67,14 +67,8 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
         medicineItemFragment = new MedicineItemFragment();
         bundle = new Bundle();
         bundle.putString("type",Constants.GROUP_BANDLE);
-<<<<<<< HEAD
         bundle.putSerializable(Constants.GROUP_BANDLE, group);
         medicineItemFragment.setArguments(bundle);
         ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
-=======
-        midicineItemFragment.setArguments(bundle);
-
-        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, midicineItemFragment).commit();
->>>>>>> 9e7fa444bc8a8c7569bc8d5933a04ab9d1c66a45
     }
 }

@@ -65,24 +65,13 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
         CircleImageView iv_drugphoto;
         CheckBox cb_status;
 
-<<<<<<< HEAD
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            container = itemView.findViewById(R.id.container);
-            tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
-            tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
-            iv_drugphoto = itemView.findViewById(R.id.iv_medicineimg);
-            cb_status = itemView.findViewById(R.id.cb_status);
-        }
-=======
     public MyViewHolder(View itemView) {
         super(itemView);
         container = itemView.findViewById(R.id.container);
         tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
         tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
-        iv_drugphoto = itemView.findViewById(R.id.iv_drugphoto);
+        iv_drugphoto = itemView.findViewById(R.id.iv_medicineimg);
         cb_status = itemView.findViewById(R.id.cb_status);
->>>>>>> 9e7fa444bc8a8c7569bc8d5933a04ab9d1c66a45
     }
 }
 
