@@ -1,5 +1,6 @@
 package com.example.ismailamassi.finalprojectandroid.Models;
 
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
 
 import java.io.Serializable;
@@ -8,7 +9,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class Medicine implements Serializable {
-    private String id;
+    private int id;
     private String name;
     private String about;
     private String uses;
@@ -24,17 +25,9 @@ public class Medicine implements Serializable {
     private String yearSplit;
 
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-    public Medicine(String name, String about, String uses, String sideEffect, MedicineGroup group, MedicineDepartment department) {
-        yearSplit = year.substring(2, 4);
-        if (count <= 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%04d", count);
-            this.setId(Constants.MEDICINE_ID + yearSplit + countWithZero);
-            count++;
-        } else if (count > 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%05d", count);
-            this.setId(Constants.MEDICINE_ID + yearSplit + countWithZero);
-            count++;
-        }
+
+    public Medicine(int id, String name, String about, String uses, String sideEffect, MedicineGroup group, MedicineDepartment department) {
+        this.setId(id);
         this.setName(name);
         this.setMedicineGroup(group);
         this.setMedicineDepartment(department);
@@ -44,13 +37,14 @@ public class Medicine implements Serializable {
         traditionalNames = new ArrayList<>();
         group.setGroupItem(this);
         department.addDepartmentItem(this);
+        SystemControl.allMedicine.add(this);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

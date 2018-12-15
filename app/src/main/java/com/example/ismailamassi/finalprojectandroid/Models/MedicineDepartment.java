@@ -8,36 +8,23 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MedicineDepartment implements Serializable{
-    private String id;
+public class MedicineDepartment implements Serializable {
+    private int id;
     private String name;
     private ArrayList<Medicine> departmentItems;
 
-    private static int count = 1;
-    private String yearSplit;
-    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-
-    public MedicineDepartment(String name) {
-        yearSplit = year.substring(2, 4);
-        if (count <= 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%04d", count);
-            this.setId(Constants.DEPARTMENT_ID + yearSplit + countWithZero);
-            count++;
-        } else if (count > 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%05d", count);
-            this.setId(Constants.DEPARTMENT_ID + yearSplit + countWithZero);
-            count++;
-        }
+    public MedicineDepartment(int departmentId, String name) {
+        this.setId(departmentId);
         this.setName(name);
         departmentItems = new ArrayList<>();
         SystemControl.allDepartments.add(this);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -33,7 +33,7 @@ public class SigninActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
         bindView();
-        TestData.GenerateData();
+//        TestData.GenerateData();
         signupIntent = new Intent(SigninActivity.this, SignupActivity.class);
         forgetPasswordIntent = new Intent(SigninActivity.this, ForgetPasswordActivity.class);
         prefManager = new PrefManager(this);

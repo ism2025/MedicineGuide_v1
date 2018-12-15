@@ -74,14 +74,14 @@ public class PrefManager {
     }
 
 
-    public void setIdAccount(String emailAccount) {
-        editor.putString(Constants.ID, emailAccount);
+    public void setIdAccount(int idAccount) {
+        editor.putInt(Constants.ID, idAccount);
         editor.commit();//apply();
 
     }
 
-    public String getIdAccount() {
-        return pref.getString(Constants.ID, "A/N");
+    public int getIdAccount() {
+        return pref.getInt(Constants.ID, 0);
     }
 
 }

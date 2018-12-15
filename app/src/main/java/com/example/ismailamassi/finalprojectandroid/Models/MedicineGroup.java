@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MedicineGroup implements Serializable{
-    private String id;
+public class MedicineGroup implements Serializable {
+    private int id;
     private String name;
     private ArrayList<Medicine> groupItems;
 
@@ -17,27 +17,18 @@ public class MedicineGroup implements Serializable{
     private String yearSplit;
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
-    public MedicineGroup(String name) {
-        yearSplit = year.substring(2, 4);
-        if (count <= 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%04d", count);
-            this.setId(Constants.GROUP_ID + yearSplit + countWithZero);
-            count++;
-        } else if (count > 99999) {
-            String countWithZero = String.format(Locale.CANADA, "%05d", count);
-            this.setId(Constants.GROUP_ID + yearSplit + countWithZero);
-            count++;
-        }
+    public MedicineGroup(int groupId, String name) {
+        this.setId(groupId);
         this.setName(name);
         groupItems = new ArrayList<>();
         SystemControl.allGroups.add(this);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

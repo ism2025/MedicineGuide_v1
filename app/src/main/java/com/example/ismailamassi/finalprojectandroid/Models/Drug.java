@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.util.ArrayList;
 
-public class Drug implements Serializable{
+public class Drug implements Serializable {
+    private int id;
+
     private DoctorUser doctor;
     private PatientUser patient;
     private Medicine medicine;
@@ -13,7 +15,8 @@ public class Drug implements Serializable{
     private int drugQuantity;
     private boolean isTake;
 
-    public Drug(DoctorUser doctor, PatientUser patient, Medicine medicine, String dayOfWeek, String drugType, int drugQuantity) {
+    public Drug(int id, DoctorUser doctor, PatientUser patient, Medicine medicine, String dayOfWeek, String drugType, int drugQuantity) {
+        this.setId(id);
         this.doctor = doctor;
         this.patient = patient;
         this.medicine = medicine;
@@ -21,6 +24,14 @@ public class Drug implements Serializable{
         DrugType = drugType;
         this.drugQuantity = drugQuantity;
         patient.addDrug(this);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public DoctorUser getDoctor() {

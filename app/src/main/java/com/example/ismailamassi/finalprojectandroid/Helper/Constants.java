@@ -44,6 +44,10 @@ public class Constants {
     public static final String COL_FOUND_ID = "_id";
     public static final String COL_FOUND_NAME = "name";
     public static final String COL_FOUND_LOCATION = "location";
+    public static final String COL_FOUND_PASSWORD = "password";
+    public static final String COL_FOUND_EMAIL = "email";
+    public static final String COL_FOUND_PHOTO = "photo";
+    public static final String COL_FOUND_PHONE_NUMBER = "phoneNumber";
 
     //DOCTOR COLs
     public static final String COL_DOCTOR_ID = "_id";

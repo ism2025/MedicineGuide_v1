@@ -15,27 +15,10 @@ public class PatientUser extends User implements Serializable {
     private ArrayList<Medicine> medicines;
     private ArrayList<Diseases> diseases;
     private ArrayList<DoctorUser> patientDoctor;
-    String id;
 
-    private static int count = 1;
-    private String yearSplit;
-    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-
-    public PatientUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
-        super(name, email, password, phoneNumber, role, dob, photoUrl);
+    public PatientUser(int id, String name, String email, String password, String phoneNumber, int role, String dob, String photoUrl) {
+        super(id, name, email, password, phoneNumber, role, dob, photoUrl);
         this.setpWeight(pWeight);
-        yearSplit = year.substring(2, 4);
-        if (role == Constants.PATIENT_ID) {
-            if (count <= 99999) {
-                String countWithZero = String.format(Locale.CANADA, "%04d", count);
-                this.setId(Constants.PATIENT_ID + yearSplit + countWithZero);
-                count++;
-            } else if (count > 99999) {
-                String countWithZero = String.format(Locale.CANADA, "%05d", count);
-                this.setId(Constants.PATIENT_ID + yearSplit + countWithZero);
-                count++;
-            }
-        }
         drugs = new ArrayList<>();
         medicines = new ArrayList<>();
         diseases = new ArrayList<>();

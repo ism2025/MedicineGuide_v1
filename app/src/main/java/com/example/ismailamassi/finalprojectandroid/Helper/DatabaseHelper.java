@@ -2,6 +2,7 @@ package com.example.ismailamassi.finalprojectandroid.Helper;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
@@ -22,6 +23,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.TABLE_FOUNDATION + "(" +
                 Constants.COL_FOUND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 Constants.COL_FOUND_NAME + " varchar(55) ," +
+                Constants.COL_FOUND_EMAIL + " varchar(55) ," +
+                Constants.COL_FOUND_PASSWORD + " varchar(55) ," +
+                Constants.COL_FOUND_PHONE_NUMBER + " varchar(55) ," +
+                Constants.COL_FOUND_PHOTO + " varchar(55) ," +
                 Constants.COL_FOUND_LOCATION + " varchar(55)" + ")");
         db.execSQL("CREATE TABLE " +
                 Constants.TABLE_DOCTOR + "(" +
@@ -29,9 +34,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.COL_DOCTOR_NAME + " varchar(55) ," +
                 Constants.COL_DOCTOR_EMAIL + " varchar(55) ," +
                 Constants.COL_DOCTOR_PASSWORD + " varchar(55) ," +
-                Constants.COL_DOCTOR_GENDER + " INTEGER," +
-                Constants.COL_DOCTOR_PHOTO + " varchar(55) ," +
                 Constants.COL_DOCTOR_PHONE_NUMBER + " varchar(55) ," +
+                Constants.COL_DOCTOR_PHOTO + " varchar(55) ," +
+                Constants.COL_DOCTOR_GENDER + " INTEGER," +
                 Constants.COL_DOCTOR_RATE + " real ," +
                 Constants.COL_DOCTOR_SECTION + " varchar(55) ," +
                 Constants.COL_DOCTOR_DOB + " date" + ")");
@@ -93,7 +98,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ")");
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_FOUNDATION);
@@ -107,11 +111,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertToFoundationTable(String foundationName, String location) {
+    public boolean insertToFoundationTable(String foundationName, String foundationEmail, String foundationPassword, String foundationPhoto, String foundationPhoneNumber, String FoundationLocation) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_FOUND_NAME, foundationName);
-        values.put(Constants.COL_FOUND_LOCATION, location);
+        values.put(Constants.COL_FOUND_EMAIL, foundationEmail);
+        values.put(Constants.COL_FOUND_PASSWORD, foundationPassword);
+        values.put(Constants.COL_FOUND_PHONE_NUMBER, foundationPhoneNumber);
+        values.put(Constants.COL_FOUND_PHOTO, foundationPhoto);
+        values.put(Constants.COL_FOUND_LOCATION, FoundationLocation);
         long result = database.insert(Constants.TABLE_FOUNDATION, null, values);
         if (result == -1)
             return false;
@@ -225,13 +233,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    String getDateAsString(Date date) {
+    private String getDateAsString(Date date) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
         return day + "-" + month + "-" + year;
+    }
+
+    public Cursor getFromDatabase(String tableName) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        return database.rawQuery("SELECT * FROM " + tableName, null);
     }
 
 }

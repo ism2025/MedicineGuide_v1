@@ -12,7 +12,7 @@ import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import java.util.Date;
 
 public class TestData {
-    public static void GenerateData() {
+    /*public static void GenerateData() {
         PatientUser pu1 = new PatientUser("patient1", "patient1", "123456", "3553454", Constants.PATIENT_ID, new Date(), "ic_launcher_foreground");
         PatientUser pu2 = new PatientUser("patient2", "patient2", "123456", "3553454", Constants.PATIENT_ID, new Date(), "ic_launcher_foreground");
         PatientUser pu3 = new PatientUser("patient3", "patient3", "123456", "3553454", Constants.PATIENT_ID, new Date(), "ic_launcher_foreground");
@@ -271,5 +271,5 @@ public class TestData {
         Medicine mmmmm44444 = new Medicine("medicine4", "about4", "uses4", "side effect4", mg5, md5);
         Medicine mmmmm55555 = new Medicine("medicine5", "about5", "uses5", "side effect5", mg5, md5);
 
-    }
+    }*/
 }

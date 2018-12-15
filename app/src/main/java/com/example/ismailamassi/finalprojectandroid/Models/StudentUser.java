@@ -11,10 +11,17 @@ import java.util.Locale;
 
 public class StudentUser extends User implements Serializable {
     private String educationalFoundation;
-    private static int count = 1;
-    private String yearSplit;
-
     private ArrayList<Medicine> savesMedicine;
+
+    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
+
+    public StudentUser(int id, String name, String email, String password, String phoneNumber, int role, String dob, String photoUrl) {
+        super(id, name, email, password, phoneNumber, role, dob, photoUrl);
+        this.setEducationalFoundation(educationalFoundation);
+        savesMedicine = new ArrayList<>();
+        SystemControl.allStudents.add(this);
+    }
+
 
     public ArrayList<Medicine> getSavesMedicine() {
         return savesMedicine;
@@ -23,27 +30,6 @@ public class StudentUser extends User implements Serializable {
     public void setSavesMedicine(ArrayList<Medicine> savesMedicine) {
         this.savesMedicine = savesMedicine;
     }
-    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-
-    public StudentUser(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
-        super(name, email, password, phoneNumber, role, dob, photoUrl);
-        yearSplit = year.substring(2, 4);
-        if (role == Constants.STUDENT_ID) {
-            if (count <= 99999) {
-                String countWithZero = String.format(Locale.CANADA, "%04d", count);
-                this.setId(Constants.STUDENT_ID + yearSplit + countWithZero);
-                count++;
-            } else if (count > 99999) {
-                String countWithZero = String.format(Locale.CANADA, "%05d", count);
-                this.setId(Constants.STUDENT_ID + yearSplit + countWithZero);
-                count++;
-            }
-        }
-        this.setEducationalFoundation(educationalFoundation);
-        savesMedicine = new ArrayList<>();
-        SystemControl.allStudents.add(this);
-    }
-
 
     public String getEducationalFoundation() {
         return educationalFoundation;
@@ -54,27 +40,3 @@ public class StudentUser extends User implements Serializable {
     }
 }
 
-/*
-public class Id extends AppCompatActivity {
-
-    String id;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_id);
-        final TextView textView = findViewById(R.id.textView);
-        Button btn = findViewById(R.id.button2);
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
-    }
-}
- */

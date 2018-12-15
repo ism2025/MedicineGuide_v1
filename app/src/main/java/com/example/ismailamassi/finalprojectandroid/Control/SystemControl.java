@@ -2,6 +2,7 @@ package com.example.ismailamassi.finalprojectandroid.Control;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
@@ -10,6 +11,7 @@ import com.example.ismailamassi.finalprojectandroid.Activites.FoundationMainActi
 import com.example.ismailamassi.finalprojectandroid.Activites.PatientMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Activites.StudentMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
 import com.example.ismailamassi.finalprojectandroid.Models.FoundationUser;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
@@ -22,6 +24,47 @@ import com.example.ismailamassi.finalprojectandroid.Models.User;
 import java.util.ArrayList;
 
 public class SystemControl {
+    Context context;
+
+    public void generateData(Context context) {
+        DatabaseHelper helper = new DatabaseHelper(context);
+
+        Cursor foundations = helper.getFromDatabase(Constants.TABLE_FOUNDATION);
+        if (foundations.getCount() != 0) {
+            while (foundations.moveToNext()) {
+                int foundationId = foundations.getInt(0);
+                String foundationName = foundations.getString(1);
+                String foundationEmail = foundations.getString(2);
+                String foundationPassword = foundations.getString(3);
+                String foundationPhoneNumber = foundations.getString(4);
+                String foundationPhoto = foundations.getString(5);
+                String foundationLoaction = foundations.getString(6);
+                new FoundationUser(foundationId, foundationName, foundationEmail, foundationPassword, foundationPhoneNumber, Constants.FOUNDATION_ID, null, foundationPhoto)
+                        .setLocation(foundationLoaction);
+            }
+        }
+        Cursor doctors = helper.getFromDatabase(Constants.TABLE_DOCTOR);
+        if (doctors.getCount() != 0) {
+            while (doctors.moveToNext()) {
+                int doctorId = doctors.getInt(0);
+                String doctorName = doctors.getString(1);
+                String doctorEmail = doctors.getString(2);
+                String doctorPassword = doctors.getString(3);
+                String doctorPhoneNumber = doctors.getString(4);
+                String doctorPhoto = doctors.getString(5);
+                int doctorGender = doctors.getInt(6);
+                float doctorRate = doctors.getFloat(7);
+                String doctorSection = doctors.getString(8);
+                String doctorDob = doctors.getString(8);
+                DoctorUser doctorUser = new DoctorUser(doctorId, doctorName, doctorEmail, doctorPassword, doctorPhoneNumber, Constants.DOCTOR_ID, doctorDob, doctorPhoto);
+                doctorUser.setGender(doctorGender);
+                doctorUser.setDoctorRate(doctorRate);
+                doctorUser.setSection(doctorSection);
+            }
+        }
+
+    }
+
     public static ArrayList<User> allUsers = new ArrayList<>();
     public static ArrayList<PatientUser> allPatients = new ArrayList<>();
     public static ArrayList<StudentUser> allStudents = new ArrayList<>();
@@ -30,10 +73,6 @@ public class SystemControl {
     public static ArrayList<MedicineGroup> allGroups = new ArrayList<>();
     public static ArrayList<MedicineDepartment> allDepartments = new ArrayList<>();
     public static ArrayList<Medicine> allMedicine = new ArrayList<>();
-
-
-//    public static ArrayList<User> allUsers = new ArrayList<>();
-//    public static ArrayList<User> allUsers = new ArrayList<>();
 
     private static Intent doctorMainActivityIntent;
     private static Intent foundationMainActivityIntent;
@@ -51,10 +90,10 @@ public class SystemControl {
         return Constants.user;
     }
 
-    public static User getUserById(String id) {
+    public static User getUserById(int id) {
         User tmp = null;
         for (User user : allUsers) {
-            if (user.getId().equals(id)) {
+            if (user.getId() == id) {
                 tmp = user;
                 break;
             }

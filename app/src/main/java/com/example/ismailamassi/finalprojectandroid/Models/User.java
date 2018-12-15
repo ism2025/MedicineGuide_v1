@@ -5,20 +5,20 @@ import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import java.io.Serializable;
 import java.util.Date;
 
-public abstract class User implements Serializable{
-    private String id;
+public abstract class User implements Serializable {
+    private int id;
     private String name;
     private String photoUrl;
     private int role;
     private int gender;
 
-    private Date dob;
+    private String dob;
 
     private String email;
     private String password;
     private String phoneNumber;
 
-    public User(String name, String email, String password, String phoneNumber, int role, Date dob, String photoUrl) {
+    public User(int id, String name, String email, String password, String phoneNumber, int role, String dob, String photoUrl) {
         this.name = name;
         this.role = role;
         this.dob = dob;
@@ -29,11 +29,11 @@ public abstract class User implements Serializable{
         SystemControl.allUsers.add(this);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -54,11 +54,11 @@ public abstract class User implements Serializable{
         this.role = role;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
