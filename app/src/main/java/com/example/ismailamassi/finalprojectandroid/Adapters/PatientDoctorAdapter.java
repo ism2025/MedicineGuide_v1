@@ -1,6 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
 import com.example.ismailamassi.finalprojectandroid.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,10 @@ public class PatientDoctorAdapter extends RecyclerView.Adapter<PatientDoctorAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         final PatientUser patientUser = patientUsers.get(position);
         holder.textView.setText(patientUser.getName());
+
+        Picasso.with(context).load(patientUser.getPhotoUrl()).resize(500, 500)
+                .error(R.drawable.ic_dashboard_black_24dp)
+                .centerCrop().into(holder.circleImageView);
         int id = context.getResources().getIdentifier(patientUser.getPhotoUrl(), "drawable", "com.example.ismailamassi.finalprojectandroid");
         holder.circleImageView.setImageResource(id);
     }

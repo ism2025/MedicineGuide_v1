@@ -67,8 +67,7 @@ public class DoctorMedicineFragment extends Fragment {
         btn_department.setVisibility(View.GONE);
         viewPager.setVisibility(View.VISIBLE);
     }
-<<<<<<< HEAD
-=======
+
     private void btnVisible(){
         btn_group.setVisibility(View.VISIBLE);
         btn_department.setVisibility(View.VISIBLE);
@@ -76,5 +75,4 @@ public class DoctorMedicineFragment extends Fragment {
 
     }
 
->>>>>>> 9e7fa444bc8a8c7569bc8d5933a04ab9d1c66a45
 }

@@ -20,7 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " +
@@ -65,9 +64,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.COL_DRUG_TYPE + " varchar(55) ," +
                 Constants.COL_DRUG_QUANTITY + " INTEGER," +
                 Constants.COL_DRUG_ISTAKE + " INTEGER ," +
-                "FOREIGN KEY(" + Constants.COL_DRUG_DOCTOR_ID + ") REFERENCES " + Constants.TABLE_DOCTOR + "(" + Constants.COL_DOCTOR_ID + ")," +
-                "FOREIGN KEY(" + Constants.COL_DRUG_PATIENT_ID + ") REFERENCES " + Constants.TABLE_PATIENT + "(" + Constants.COL_PATIENT_ID + ")," +
-                "FOREIGN KEY(" + Constants.COL_DRUG_MEDICINE_ID + ")  REFERENCES " + Constants.TABLE_MEDICINE + "(" + Constants.COL_MEDICINE_ID + ")" +
+                Constants.COL_DRUG_DOCTOR_ID+ " REFERENCES " + Constants.TABLE_DOCTOR + "(" + Constants.COL_DOCTOR_ID + ")," +
+                Constants.COL_DRUG_PATIENT_ID+ " REFERENCES " + Constants.TABLE_PATIENT + "(" + Constants.COL_PATIENT_ID + ")," +
+                Constants.COL_DRUG_MEDICINE_ID + " REFERENCES " + Constants.TABLE_MEDICINE + "(" + Constants.COL_MEDICINE_ID + ")" +
                 ")");
 
         db.execSQL("CREATE TABLE " +
@@ -79,8 +78,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.COL_MEDICINE_SIDE_EFFECT + " varchar(55)," +
                 Constants.COL_MEDICINE_PHOTO + " varchar(55)," +
                 Constants.COL_MEDICINE_STORAGE + " varchar(55) ," +
-                "FOREIGN KEY(" + Constants.COL_MEDICINE_DEPARTMENT_ID + ") REFERENCES " + Constants.TABLE_DEPARTMENT + "(" + Constants.COL_DEPARTMENT_ID + ")," +
-                "FOREIGN KEY(" + Constants.COL_MEDICINE_GROUP_ID + ") REFERENCES " + Constants.TABLE_GROUP + "(" + Constants.COL_GROUP_ID + ")" +
+                Constants.COL_MEDICINE_DEPARTMENT_ID + " REFERENCES " + Constants.TABLE_DEPARTMENT + "(" + Constants.COL_DEPARTMENT_ID + ")," +
+                Constants.COL_MEDICINE_GROUP_ID + " REFERENCES " + Constants.TABLE_GROUP + "(" + Constants.COL_GROUP_ID + ")" +
                 ")");
 
         db.execSQL("CREATE TABLE " +
@@ -94,12 +93,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.COL_GROUP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 Constants.COL_GROUP_NAME + " varchar(55) " +
                 ")");
-
-        db.execSQL("create table " +
-                Constants.TABLE_DOCTOR_PATIENT + "(" +
+/*
+        db.execSQL("create table "                 Constants.TABLE_DOCTOR_PATIENT + "(" +
                 Constants.COL_DOCTOR_PATIENT_DOCTOR_ID + " INTEGER REFERENCES " + Constants.TABLE_DOCTOR + "(" + Constants.COL_DOCTOR_ID + ")," +
                 Constants.COL_DOCTOR_PATIENT_PATIENT_ID + " INTEGER REFERENCES " + Constants.TABLE_PATIENT + "(" + Constants.COL_PATIENT_ID + ")" +
-                ")");
+                ")");*/
     }
 
     @Override
@@ -107,7 +105,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_FOUNDATION);
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_DOCTOR);
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_DEPARTMENT);
-        db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_DOCTOR_PATIENT);
+        //db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_DOCTOR_PATIENT);
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_DRUG);
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_PATIENT);
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_MEDICINE);
@@ -115,14 +113,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertToFoundationTable(String foundationName, String foundationEmail, String foundationPassword, String foundationPhoto, String foundationPhoneNumber, String FoundationLocation) {
+
+
+    public boolean insertToFoundationTable(String foundationName, String foundationEmail, String foundationPassword, String foundationPhoneNumber, String foundationPhoto, String FoundationLocation) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_FOUND_NAME, foundationName);
         values.put(Constants.COL_FOUND_EMAIL, foundationEmail);
         values.put(Constants.COL_FOUND_PASSWORD, foundationPassword);
         values.put(Constants.COL_FOUND_PHONE_NUMBER, foundationPhoneNumber);
-        values.put(Constants.COL_FOUND_PHOTO, foundationPhoto);
+        values.put(Constants.COL_FOUND_PHOTO   , foundationPhoto);
         values.put(Constants.COL_FOUND_LOCATION, FoundationLocation);
         long result = database.insert(Constants.TABLE_FOUNDATION, null, values);
         if (result == -1)
@@ -131,7 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean insertToDoctorTable(String doctorName, String doctorEmail, String doctorPassword, int doctorGender, String doctorPhotoUrl, String doctorPhoneNumber, float doctorRate, String doctorSection, Date doctorDob) {
+    public boolean insertToDoctorTable(String doctorName, String doctorEmail, String doctorPassword, String doctorPhoneNumber, String doctorPhotoUrl, int doctorGender, float doctorRate, String doctorSection, String doctorDob) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_DOCTOR_NAME, doctorName);
@@ -142,7 +142,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Constants.COL_DOCTOR_PHONE_NUMBER, doctorPhoneNumber);
         values.put(Constants.COL_DOCTOR_RATE, doctorRate);
         values.put(Constants.COL_DOCTOR_SECTION, doctorSection);
-        values.put(Constants.COL_DOCTOR_DOB, getDateAsString(doctorDob));
+        values.put(Constants.COL_DOCTOR_DOB, doctorDob);
         long result = database.insert(Constants.TABLE_DOCTOR, null, values);
         if (result == -1)
             return false;
@@ -150,17 +150,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean insertToPatientTable(String patientName, String patientEmail, String patientPassword, int patientGender, String patientPhotoUrl, String patientWeight, String patientPhoneNumber, Date patientDob) {
+    public boolean insertToPatientTable(String patientName, String patientEmail, String patientPassword, String patientPhoneNumber, String patientPhotoUrl, int patientGender, String patientWeight, String patientDob) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_PATIENT_NAME, patientName);
         values.put(Constants.COL_PATIENT_EMAIL, patientEmail);
         values.put(Constants.COL_PATIENT_PASSWORD, patientPassword);
-        values.put(Constants.COL_PATIENT_GENDER, patientGender);
         values.put(Constants.COL_PATIENT_PHOTO, patientPhotoUrl);
         values.put(Constants.COL_PATIENT_WEIGHT, patientWeight);
+        values.put(Constants.COL_PATIENT_GENDER, patientGender);
         values.put(Constants.COL_PATIENT_PHONR_NUMBER, patientPhoneNumber);
-        values.put(Constants.COL_DOCTOR_DOB, getDateAsString(patientDob));
+        values.put(Constants.COL_DOCTOR_DOB, patientDob);
         long result = database.insert(Constants.TABLE_PATIENT, null, values);
         if (result == -1)
             return false;

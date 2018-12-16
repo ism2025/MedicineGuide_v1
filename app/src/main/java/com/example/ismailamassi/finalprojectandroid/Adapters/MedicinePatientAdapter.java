@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Models.Drug;
 import com.example.ismailamassi.finalprojectandroid.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,7 +39,10 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
         final Drug drug = list.get(position);
         holder.tv_medicinename.setText(drug.getMedicine().getName());
         holder.tv_drugquantity.setText(drug.getDrugQuantity() + "");
-        holder.iv_drugphoto.setImageResource(R.drawable.ic_home_black_24dp);
+
+        Picasso.with(context).load(drug.getPhotoUrl()).resize(350, 350)
+                .error(R.drawable.ic_dashboard_black_24dp)
+                .centerCrop().into(holder.iv_drugphoto);
         holder.cb_status.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -65,27 +69,27 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
         CircleImageView iv_drugphoto;
         CheckBox cb_status;
 
-    public MyViewHolder(View itemView) {
-        super(itemView);
-        container = itemView.findViewById(R.id.container);
-        tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
-        tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
-        iv_drugphoto = itemView.findViewById(R.id.iv_medicineimg);
-        cb_status = itemView.findViewById(R.id.cb_status);
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            container = itemView.findViewById(R.id.container);
+            tv_medicinename = itemView.findViewById(R.id.tv_medicinename);
+            tv_drugquantity = itemView.findViewById(R.id.tv_drugquantity);
+            iv_drugphoto = itemView.findViewById(R.id.iv_medicineimg);
+            cb_status = itemView.findViewById(R.id.cb_status);
+        }
+    }
+
+    private void openDrugInfoDialog(Drug drug) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context.getApplicationContext())
+                .setTitle(drug.getDayOfWeek())
+                .setMessage(
+                        drug.getMedicine().getName() + "\n"
+                                + drug.getDoctor().getName() + "\n"
+                                + drug.getDayOfWeek() + "\n"
+                                + drug.getDrugQuantity() + "\n"
+                                + drug.getDrugType() + "\n"
+                                + drug.isTake()
+                );
+        dialog.create().show();
     }
 }
-
-private void openDrugInfoDialog(Drug drug) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context.getApplicationContext())
-        .setTitle(drug.getDayOfWeek())
-        .setMessage(
-        drug.getMedicine().getName() + "\n"
-        + drug.getDoctor().getName() + "\n"
-        + drug.getDayOfWeek() + "\n"
-        + drug.getDrugQuantity() + "\n"
-        + drug.getDrugType() + "\n"
-        + drug.isTake()
-        );
-        dialog.create().show();
-        }
-        }

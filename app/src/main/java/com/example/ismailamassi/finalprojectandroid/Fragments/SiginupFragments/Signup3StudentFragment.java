@@ -122,7 +122,7 @@ public class Signup3StudentFragment extends Fragment {
         String foundation = bundle.getString("foundation");
         String Dob = bundle.getString("dob");
 
-        StudentUser su = new StudentUser(name, email, password, phoneNumber, role, null, photoUrl);
+        StudentUser su = new StudentUser(456, name, email, password, phoneNumber, role, null, photoUrl);
         su.setEducationalFoundation(foundation);
         su.setGender(gender);
     }

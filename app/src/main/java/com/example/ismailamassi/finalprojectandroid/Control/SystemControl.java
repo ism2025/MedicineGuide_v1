@@ -21,16 +21,26 @@ import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
 import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class SystemControl {
     Context context;
 
-    public void generateData(Context context) {
+    public static void generateData(Context context) {
         DatabaseHelper helper = new DatabaseHelper(context);
+
+        boolean result1 = helper.insertToFoundationTable("التوبة", "mail@mail.com", "123456", "https://api.androidhive.info/images/glide/large/bvs.jpg", "0592182025", "");
+        boolean result2 = helper.insertToFoundationTable("الشفاء", "mail@mail.com", "123456", "https://api.androidhive.info/images/glide/large/deadpool.jpg", "0592182025", "");
+        boolean result3 = helper.insertToFoundationTable("النصر", "mail@mail.com", "123456", "https://api.androidhive.info/images/glide/large/cacw.jpg", "0592182025", "");
+        boolean result4 = helper.insertToFoundationTable("الرنتيسي", "mail@mail.com", "123456", "https://api.androidhive.info/images/glide/large/bourne.jpg", "0592182025", "");
+        boolean result5 = helper.insertToFoundationTable("العودة", "mail@mail.com", "123456", "https://api.androidhive.info/images/glide/large/squad.jpg", "0592182025", "");
+
 
         Cursor foundations = helper.getFromDatabase(Constants.TABLE_FOUNDATION);
         if (foundations.getCount() != 0) {
+            foundations.moveToFirst();
             while (foundations.moveToNext()) {
                 int foundationId = foundations.getInt(0);
                 String foundationName = foundations.getString(1);
@@ -55,7 +65,7 @@ public class SystemControl {
                 int doctorGender = doctors.getInt(6);
                 float doctorRate = doctors.getFloat(7);
                 String doctorSection = doctors.getString(8);
-                String doctorDob = doctors.getString(8);
+                String doctorDob = doctors.getString(9);
                 DoctorUser doctorUser = new DoctorUser(doctorId, doctorName, doctorEmail, doctorPassword, doctorPhoneNumber, Constants.DOCTOR_ID, doctorDob, doctorPhoto);
                 doctorUser.setGender(doctorGender);
                 doctorUser.setDoctorRate(doctorRate);

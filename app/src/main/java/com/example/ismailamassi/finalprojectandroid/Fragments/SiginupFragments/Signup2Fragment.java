@@ -1,5 +1,6 @@
 package com.example.ismailamassi.finalprojectandroid.Fragments.SiginupFragments;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,8 +20,8 @@ import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.R;
 import com.fourhcode.forhutils.FUtilsValidation;
 
-public class Signup2Fragment extends Fragment {
-    Button btn_next, btn_Back;
+public class Signup2Fragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+    Button btn_next, btn_Back, btn_pickImg;
     Bundle bundle;
     EditText et_phonenum, et_dob;
     SignupActivity activity;
@@ -35,7 +37,7 @@ public class Signup2Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signup2, container, false);
         btn_next = view.findViewById(R.id.btn_nextsignup2);
         btn_Back = view.findViewById(R.id.btn_backsignup2);
-
+        btn_pickImg = view.findViewById(R.id.btn_pickImg);
         et_phonenum = view.findViewById(R.id.et_phonenum);
         et_dob = view.findViewById(R.id.et_dob);
         tv_haveacc = view.findViewById(R.id.tv_haveacc);
@@ -76,6 +78,21 @@ public class Signup2Fragment extends Fragment {
                 startActivity(signinIntent);
             }
         });
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), this, 1999, 1, 1);
+        et_dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.show();
+            }
+        });
+        btn_pickImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intentGalley = new Intent(Intent.ACTION_PICK);
+//                intentGalley.setType("image/*");
+//                startActivityForResult(intentGalley, PICK_GALLERY_IMAGE);
+            }
+        });
 
     }
 
@@ -106,6 +123,12 @@ public class Signup2Fragment extends Fragment {
             patientFragment.setArguments(bundle);
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, patientFragment).commit();
         }
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        et_dob.setText(dayOfMonth + "-" + month + "-" + year);
     }
 }
 
