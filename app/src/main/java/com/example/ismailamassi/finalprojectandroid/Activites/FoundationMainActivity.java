@@ -35,7 +35,7 @@ public class FoundationMainActivity extends AppCompatActivity {
     void onClickItems() {
         final AddDoctorFragment addDoctorFragment = new AddDoctorFragment();
         Bundle bundle = new Bundle();
-        FoundationUser fu = (FoundationUser) SystemControl.getUserByEmail(new PrefManager(FoundationMainActivity.this).getIdAccount());
+        FoundationUser fu = (FoundationUser) SystemControl.getUserByEmail(new PrefManager(FoundationMainActivity.this).getEmailAccount());
         bundle.putSerializable(Constants.FOUNDATION_BANDLE, fu);
         addDoctorFragment.setArguments(bundle);
         fb_add_patient.setOnClickListener(new View.OnClickListener() {

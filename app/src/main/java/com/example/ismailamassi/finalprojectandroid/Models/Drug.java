@@ -11,6 +11,16 @@ public class Drug implements Serializable {
     private PatientUser patient;
     private Medicine medicine;
     private String dayOfWeek;
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    private String photoUrl;
     private String DrugType;
     private int drugQuantity;
     private boolean isTake;

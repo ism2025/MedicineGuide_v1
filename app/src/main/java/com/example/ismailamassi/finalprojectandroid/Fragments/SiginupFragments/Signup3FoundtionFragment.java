@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
 import com.example.ismailamassi.finalprojectandroid.R;
 
@@ -32,7 +33,6 @@ public class Signup3FoundtionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signup3foundtion, container, false);
         signinIntent = new Intent(getActivity(), SigninActivity.class);
         tv_haveacc = view.findViewById(R.id.tv_haveacc);
-
         return view;
     }
 
@@ -65,6 +65,8 @@ public class Signup3FoundtionFragment extends Fragment {
             }
         });
     }
+
+
     private void saveData() {
         //User
         int role = Constants.PATIENT_ID;
@@ -73,15 +75,7 @@ public class Signup3FoundtionFragment extends Fragment {
         String password = bundle.getString("password");
         String phoneNumber = bundle.getString("phoneNumber");
         String photoUrl = "";   //bundle.getString("");
-        //Patient
-        int gender = bundle.getInt("gender");
-        String Dob = bundle.getString("dob");
-        int weight = bundle.getInt("weight");
-        String diseases = bundle.getString("diseases");
-
-        PatientUser pu = new PatientUser(name, email, password, phoneNumber, role, null, photoUrl);
-        pu.setGender(gender);
-//        pu.setDiseases(diseases);
-        pu.setpWeight(weight);
+        //Foundation
     }
+
 }

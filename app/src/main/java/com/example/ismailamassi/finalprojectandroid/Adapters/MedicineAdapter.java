@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.ismailamassi.finalprojectandroid.Activites.DoctorMainActivity;
 import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Fragments.DoctorFragments.AddDrugToPatirntFragment;
@@ -21,7 +22,10 @@ import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
 import com.example.ismailamassi.finalprojectandroid.Models.User;
 import com.example.ismailamassi.finalprojectandroid.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyViewHolder> {
@@ -50,20 +54,16 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
                 openMedicineDetails(medicine);
             }
         });
-//        int id = context.getResources().getIdentifier(medicine.getPhotoUrl(), "drawable", "com.example.ismailamassi.finalprojectandroid");
-
-        holder.iv_medicineimg.setImageResource(
-//                id
-                R.drawable.ic_lock_outline_black_24dp
-//                medicine.getPhotoUrl()
-        );
+        Picasso.with(context).load(medicine.getPhotoUrl()).resize(350, 350)
+                .error(R.drawable.ic_dashboard_black_24dp)
+                .centerCrop().into(holder.iv_medicineimg);
         holder.container.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 User user = SystemControl.getUserById(new PrefManager(context).getIdAccount());
                 if (user instanceof DoctorUser) {
                     openPopupMenu(v, medicine, (DoctorUser) user);
-                }else{
+                } else {
 
                 }
                 return true;
@@ -108,7 +108,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
                 switch (item.getItemId()) {
                     case R.id.addToPatient:
                         AddDrugToPatirntFragment addDrugToPatirntFragment = new AddDrugToPatirntFragment();
-                        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor,addDrugToPatirntFragment).addToBackStack(null).commit();
+                        ((DoctorMainActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, addDrugToPatirntFragment).addToBackStack(null).commit();
                         Toast.makeText(context.getApplicationContext(), item.getTitle(), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.AddToSaves:

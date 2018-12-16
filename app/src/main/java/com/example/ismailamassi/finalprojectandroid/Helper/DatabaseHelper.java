@@ -111,7 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertToFoundationTable(String foundationName, String foundationEmail, String foundationPassword, String foundationPhoto, String foundationPhoneNumber, String FoundationLocation) {
+    public boolean insertToFoundationTable(String foundationName, String foundationEmail, String foundationPassword, String foundationPhoneNumber, String foundationPhoto, String FoundationLocation) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_FOUND_NAME, foundationName);
@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean insertToDoctorTable(String doctorName, String doctorEmail, String doctorPassword, int doctorGender, String doctorPhotoUrl, String doctorPhoneNumber, float doctorRate, String doctorSection, Date doctorDob) {
+    public boolean insertToDoctorTable(String doctorName, String doctorEmail, String doctorPassword, String doctorPhoneNumber, String doctorPhotoUrl, int doctorGender, float doctorRate, String doctorSection, String doctorDob) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_DOCTOR_NAME, doctorName);
@@ -138,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Constants.COL_DOCTOR_PHONE_NUMBER, doctorPhoneNumber);
         values.put(Constants.COL_DOCTOR_RATE, doctorRate);
         values.put(Constants.COL_DOCTOR_SECTION, doctorSection);
-        values.put(Constants.COL_DOCTOR_DOB, getDateAsString(doctorDob));
+        values.put(Constants.COL_DOCTOR_DOB, doctorDob);
         long result = database.insert(Constants.TABLE_DOCTOR, null, values);
         if (result == -1)
             return false;
@@ -146,17 +146,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean insertToPatientTable(String patientName, String patientEmail, String patientPassword, int patientGender, String patientPhotoUrl, String patientWeight, String patientPhoneNumber, Date patientDob) {
+    public boolean insertToPatientTable(String patientName, String patientEmail, String patientPassword, String patientPhoneNumber, String patientPhotoUrl, int patientGender, String patientWeight, String patientDob) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.COL_PATIENT_NAME, patientName);
         values.put(Constants.COL_PATIENT_EMAIL, patientEmail);
         values.put(Constants.COL_PATIENT_PASSWORD, patientPassword);
-        values.put(Constants.COL_PATIENT_GENDER, patientGender);
         values.put(Constants.COL_PATIENT_PHOTO, patientPhotoUrl);
         values.put(Constants.COL_PATIENT_WEIGHT, patientWeight);
+        values.put(Constants.COL_PATIENT_GENDER, patientGender);
         values.put(Constants.COL_PATIENT_PHONR_NUMBER, patientPhoneNumber);
-        values.put(Constants.COL_DOCTOR_DOB, getDateAsString(patientDob));
+        values.put(Constants.COL_DOCTOR_DOB, patientDob);
         long result = database.insert(Constants.TABLE_PATIENT, null, values);
         if (result == -1)
             return false;

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.Models.PatientUser;
 import com.example.ismailamassi.finalprojectandroid.*;
@@ -123,9 +124,9 @@ public class Signup3PatientFragment extends Fragment {
         int weight = bundle.getInt("weight");
         String diseases = bundle.getString("diseases");
 
-        PatientUser pu = new PatientUser(name, email, password, phoneNumber, role, null, photoUrl);
-        pu.setGender(gender);
-//        pu.setDiseases(diseases);
-        pu.setpWeight(weight);
+//        PatientUser pu = new PatientUser(name, email, password, phoneNumber, role, null, photoUrl);
+//        pu.setGender(gender);
+        DatabaseHelper helper = new DatabaseHelper(getActivity());
+        helper.insertToPatientTable(name, email, password, phoneNumber, photoUrl, 1, weight + "", null);
     }
 }
