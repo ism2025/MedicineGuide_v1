@@ -7,7 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
+import com.example.ismailamassi.finalprojectandroid.Models.DoctorUser;
+
+import java.sql.Array;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -246,5 +250,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = this.getWritableDatabase();
         return database.rawQuery("SELECT * FROM " + tableName, null);
     }
+
 
 }
