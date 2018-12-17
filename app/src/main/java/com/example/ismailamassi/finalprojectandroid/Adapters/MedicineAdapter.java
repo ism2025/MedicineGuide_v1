@@ -54,9 +54,13 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MyView
                 openMedicineDetails(medicine);
             }
         });
-        Picasso.with(context).load(medicine.getPhotoUrl()).resize(350, 350)
+        Toast.makeText(context, medicine.getPhotoUrl(), Toast.LENGTH_SHORT).show();
+        Picasso.with(context).load(
+//                medicine.getPhotoUrl()
+                "https://api.androidhive.info/images/glide/large/doctor.jpg"
+        ).resize(350, 350)
                 .error(R.drawable.ic_dashboard_black_24dp)
-                .centerCrop().into(holder.iv_medicineimg);
+                .into(holder.iv_medicineimg);
         holder.container.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

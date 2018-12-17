@@ -53,33 +53,33 @@ public class SystemControl {
         boolean de4 = helper.insertToDepartmentTable("department4");
         boolean de5 = helper.insertToDepartmentTable("department5");
 
-        DoctorUser doctorUser1 = new DoctorUser(1,"ee","ee","ee","ee",Constants.DOCTOR_ID,"ee","ee");
+        DoctorUser doctorUser1 = new DoctorUser(1, "ee", "ee", "ee", "ee", Constants.DOCTOR_ID, "ee", "ee");
 
-        boolean m1 = helper.insertToMedicineTable("test1 ", "test1", "aaaaaaaaaaaa", "das", "dssd", "", 1, 2);
-        boolean m2 = helper.insertToMedicineTable("test2 ", "test2", "bbbbbbbbbbbb", "das", "dssd", "", 1, 2);
-        boolean m3 = helper.insertToMedicineTable("test3 ", "test3", "cccccccccccc", "das", "dssd", "", 1, 2);
-        boolean m4 = helper.insertToMedicineTable("test4 ", "test4", "dddddddddddd", "das", "dssd", "", 1, 2);
-        boolean m5 = helper.insertToMedicineTable("test5 ", "test5", "eeeeeeeeeeee", "das", "dssd", "", 1, 2);
-        boolean m6 = helper.insertToMedicineTable("test6 ", "test5", "ffffffffffff", "das", "dssd", "", 2, 1);
-        boolean m7 = helper.insertToMedicineTable("test7 ", "test5", "gggggggggggg", "das", "dssd", "", 2, 1);
-        boolean m8 = helper.insertToMedicineTable("test8 ", "test5", "hhhhhhhhhhhh", "das", "dssd", "", 2, 1);
-        boolean m9 = helper.insertToMedicineTable("test9 ", "test5", "iiiiiiiiiiii", "das", "dssd", "", 2, 1);
-        boolean m10= helper.insertToMedicineTable("test10", "test5", "jjjjjjjjjjjj", "das", "dssd", "", 2, 1);
-        boolean m11= helper.insertToMedicineTable("test11", "test5", "kkkkkkkkkkkk", "das", "dssd", "", 3, 3);
-        boolean m12= helper.insertToMedicineTable("test12", "test5", "llllllllllll", "das", "dssd", "", 3, 3);
-        boolean m13= helper.insertToMedicineTable("test13", "test5", "mmmmmmmmmmmm", "das", "dssd", "", 3, 3);
-        boolean m14= helper.insertToMedicineTable("test14", "test5", "nnnnnnnnnnnn", "das", "dssd", "", 3, 3);
-        boolean m15= helper.insertToMedicineTable("test15", "test5", "oooooooooooo", "das", "dssd", "", 3, 3);
-        boolean m16= helper.insertToMedicineTable("test16", "test5", "pppppppppppp", "das", "dssd", "", 4, 5);
-        boolean m17= helper.insertToMedicineTable("test17", "test5", "qqqqqqqqqqqq", "das", "dssd", "", 4, 5);
-        boolean m18= helper.insertToMedicineTable("test18", "test5", "rrrrrrrrrrrr", "das", "dssd", "", 4, 5);
-        boolean m19= helper.insertToMedicineTable("test19", "test5", "ssssssssssss", "das", "dssd", "", 4, 5);
-        boolean m20= helper.insertToMedicineTable("test20", "test5", "uuuuuuuuuuuu", "das", "dssd", "", 4, 5);
-        boolean m21= helper.insertToMedicineTable("test21", "test5", "vvvvvvvvvvvv", "das", "dssd", "", 5, 4);
-        boolean m22= helper.insertToMedicineTable("test22", "test5", "wwwwwwwwwwww", "das", "dssd", "", 5, 4);
-        boolean m23= helper.insertToMedicineTable("test23", "test5", "xxxxxxxxxxxx", "das", "dssd", "", 5, 4);
-        boolean m24= helper.insertToMedicineTable("test24", "test5", "yyyyyyyyyyyy", "das", "dssd", "", 5, 4);
-        boolean m25= helper.insertToMedicineTable("test25", "test5", "zzzzzzzzzzzz", "das", "dssd", "", 5, 4);
+        boolean m1 = helper.insertToMedicineTable("test1 ", "test1", "aaaaaaaaaaaa", "das", "dssd", "https://api.androidhive.info/images/glide/large/deadpool.jpg", 1, 2);
+        boolean m2 = helper.insertToMedicineTable("test2 ", "test2", "bbbbbbbbbbbb", "das", "dssd", "https://api.androidhive.info/images/glide/large/bvs.jpg", 1, 2);
+        boolean m3 = helper.insertToMedicineTable("test3 ", "test3", "cccccccccccc", "das", "dssd", "https://api.androidhive.info/images/glide/large/cacw.jpg", 1, 2);
+        boolean m4 = helper.insertToMedicineTable("test4 ", "test4", "dddddddddddd", "das", "dssd", "https://api.androidhive.info/images/glide/large/bourne.jpg", 1, 2);
+        boolean m5 = helper.insertToMedicineTable("test5 ", "test5", "eeeeeeeeeeee", "das", "dssd", "https://api.androidhive.info/images/glide/large/bourne.jpg", 1, 2);
+        boolean m6 = helper.insertToMedicineTable("test6 ", "test5", "ffffffffffff", "das", "dssd", "https://api.androidhive.info/images/glide/large/bourne.jpg", 2, 1);
+        boolean m7 = helper.insertToMedicineTable("test7 ", "test5", "gggggggggggg", "das", "dssd", "https://api.androidhive.info/images/glide/large/bourne.jpg", 2, 1);
+        boolean m8 = helper.insertToMedicineTable("test8 ", "test5", "hhhhhhhhhhhh", "das", "dssd", "https://api.androidhive.info/images/glide/large/bvs.jpg", 2, 1);
+        boolean m9 = helper.insertToMedicineTable("test9 ", "test5", "iiiiiiiiiiii", "das", "dssd", "https://api.androidhive.info/images/glide/large/bvs.jpg", 2, 1);
+        boolean m10 = helper.insertToMedicineTable("test10", "test5", "jjjjjjjjjjjj", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 2, 1);
+        boolean m11 = helper.insertToMedicineTable("test11", "test5", "kkkkkkkkkkkk", "das", "dssd", "https://api.androidhive.info/images/glide/large/xmen.jpg", 3, 3);
+        boolean m12 = helper.insertToMedicineTable("test12", "test5", "llllllllllll", "das", "dssd", "https://api.androidhive.info/images/glide/large/bvs.jpg", 3, 3);
+        boolean m13 = helper.insertToMedicineTable("test13", "test5", "mmmmmmmmmmmm", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 3, 3);
+        boolean m14 = helper.insertToMedicineTable("test14", "test5", "nnnnnnnnnnnn", "das", "dssd", "https://api.androidhive.info/images/glide/large/book.jpg", 3, 3);
+        boolean m15 = helper.insertToMedicineTable("test15", "test5", "oooooooooooo", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 3, 3);
+        boolean m16 = helper.insertToMedicineTable("test16", "test5", "pppppppppppp", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 4, 5);
+        boolean m17 = helper.insertToMedicineTable("test17", "test5", "qqqqqqqqqqqq", "das", "dssd", "https://api.androidhive.info/images/glide/large/bvs.jpg", 4, 5);
+        boolean m18 = helper.insertToMedicineTable("test18", "test5", "rrrrrrrrrrrr", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 4, 5);
+        boolean m19 = helper.insertToMedicineTable("test19", "test5", "ssssssssssss", "das", "dssd", "https://api.androidhive.info/images/glide/large/doctor.jpg", 4, 5);
+        boolean m20 = helper.insertToMedicineTable("test20", "test5", "uuuuuuuuuuuu", "das", "dssd", "https://api.androidhive.info/images/glide/large/xmen.jpg", 4, 5);
+        boolean m21 = helper.insertToMedicineTable("test21", "test5", "vvvvvvvvvvvv", "das", "dssd", "https://api.androidhive.info/images/glide/large/hours.jpg", 5, 4);
+        boolean m22 = helper.insertToMedicineTable("test22", "test5", "wwwwwwwwwwww", "das", "dssd", "https://api.androidhive.info/images/glide/large/book.jpg", 5, 4);
+        boolean m23 = helper.insertToMedicineTable("test23", "test5", "xxxxxxxxxxxx", "das", "dssd", "https://api.androidhive.info/images/glide/large/xmen.jpg", 5, 4);
+        boolean m24 = helper.insertToMedicineTable("test24", "test5", "yyyyyyyyyyyy", "das", "dssd", "https://api.androidhive.info/images/glide/large/hours.jpg", 5, 4);
+        boolean m25 = helper.insertToMedicineTable("test25", "test5", "zzzzzzzzzzzz", "das", "dssd", "https://api.androidhive.info/images/glide/large/hours.jpg", 5, 4);
 
 
         Cursor foundations = helper.getFromDatabase(Constants.TABLE_FOUNDATION);
@@ -127,7 +127,7 @@ public class SystemControl {
             while (groups.moveToNext()) {
                 int groupsId = groups.getInt(0);
                 String groupsName = groups.getString(1);
-                new MedicineGroup(groupsId,groupsName);
+                new MedicineGroup(groupsId, groupsName);
 
             }
         }
@@ -139,30 +139,28 @@ public class SystemControl {
             while (departments.moveToNext()) {
                 int departmentsId = departments.getInt(0);
                 String departmentsName = departments.getString(1);
-                new MedicineDepartment(departmentsId,departmentsName);
+                new MedicineDepartment(departmentsId, departmentsName);
 
             }
         }
 
         Cursor medicine = helper.getFromDatabase(Constants.TABLE_MEDICINE);
-        if (medicine!=null&&medicine.getCount() != 0) {
+        if (medicine != null && medicine.getCount() != 0) {
             medicine.moveToFirst();
             while (medicine.moveToNext()) {
                 int medicineId = medicine.getInt(0);
                 String medicineName = medicine.getString(1);
-                String medicineAbout=medicine.getString(2);
-                String medicineUses =medicine.getString(3);
+                String medicineAbout = medicine.getString(2);
+                String medicineUses = medicine.getString(3);
                 String medicineSideEfect = medicine.getString(4);
                 String medicinePhoto = medicine.getString(5);
                 String medicineStorge = medicine.getString(6);
                 int medicineGroup = medicine.getInt(7);
                 int medicineDepartment = medicine.getInt(8);
-                Medicine medicine1 =new Medicine(medicineId,medicineName,medicineAbout,medicineUses,medicineSideEfect,medicinePhoto,medicineStorge,medicineGroup,medicineDepartment);
-
-
+                new Medicine(medicineId, medicineName, medicineAbout, medicineUses, medicineSideEfect, medicinePhoto, medicineStorge, medicineGroup, medicineDepartment);
+                Toast.makeText(context, medicinePhoto + " .", Toast.LENGTH_SHORT).show();
             }
         }
-
 
 
     }
@@ -208,6 +206,28 @@ public class SystemControl {
         for (FoundationUser user : allFoundationUsers) {
             if (user.getId() == id) {
                 tmp = user;
+                break;
+            }
+        }
+        return tmp;
+    }
+
+    public static MedicineGroup getGroupById(int id) {
+        MedicineGroup tmp = null;
+        for (MedicineGroup group : allGroups) {
+            if (group.getId() == id) {
+                tmp = group;
+                break;
+            }
+        }
+        return tmp;
+    }
+
+    public static MedicineDepartment getDepartmentById(int id) {
+        MedicineDepartment tmp = null;
+        for (MedicineDepartment department : allDepartments) {
+            if (department.getId() == id) {
+                tmp = department;
                 break;
             }
         }

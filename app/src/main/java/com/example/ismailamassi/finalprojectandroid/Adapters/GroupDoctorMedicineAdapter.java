@@ -23,6 +23,7 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
     List<MedicineGroup> list;
     Bundle bundle;
     MedicineItemFragment medicineItemFragment;
+
     public GroupDoctorMedicineAdapter(Context context, List<MedicineGroup> list) {
         this.context = context;
         this.list = list;
@@ -66,9 +67,9 @@ public class GroupDoctorMedicineAdapter extends RecyclerView.Adapter<GroupDoctor
     private void openGroupMedicine(MedicineGroup group) {
         medicineItemFragment = new MedicineItemFragment();
         bundle = new Bundle();
-        bundle.putString("type",Constants.GROUP_BANDLE);
-        bundle.putSerializable(Constants.GROUP_BANDLE, group);
+        bundle.putString("type", Constants.GROUP_BANDLE);
+        bundle.putInt(Constants.GROUP_BANDLE, group.getId());
         medicineItemFragment.setArguments(bundle);
-        ((AllActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
+        ((AllActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.view_pagermidicinedoctor, medicineItemFragment).commit();
     }
 }

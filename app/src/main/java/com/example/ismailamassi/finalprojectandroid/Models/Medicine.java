@@ -20,13 +20,7 @@ public class Medicine implements Serializable {
     private int medicineGroup;
     private int medicineDepartment;
 
-
-    private static int count = 1;
-    private String yearSplit;
-
-    private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
-
-    public Medicine(int id, String name, String about, String uses, String sideEffect,String photoUrl,String storage, int group, int department) {
+    public Medicine(int id, String name, String about, String uses, String sideEffect, String photoUrl, String storage, int group, int department) {
         this.setId(id);
         this.setName(name);
         this.setMedicineGroup(group);
@@ -35,7 +29,7 @@ public class Medicine implements Serializable {
         this.setUses(uses);
         this.setSideEffect(sideEffect);
         this.setStorage(storage);
-        this.setPhotoUrl(photoUrl);
+        this.photoUrl = photoUrl;
         traditionalNames = new ArrayList<>();
 //        group.setGroupItem(this);
 //        department.addDepartmentItem(this);

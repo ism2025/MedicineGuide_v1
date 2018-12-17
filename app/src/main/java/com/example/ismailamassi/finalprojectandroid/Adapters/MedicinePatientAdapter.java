@@ -26,6 +26,7 @@ public class MedicinePatientAdapter extends RecyclerView.Adapter<MedicinePatient
     public MedicinePatientAdapter(Context context, List<Drug> list) {
         this.context = context;
         this.list = list;
+
     }
 
     @Override

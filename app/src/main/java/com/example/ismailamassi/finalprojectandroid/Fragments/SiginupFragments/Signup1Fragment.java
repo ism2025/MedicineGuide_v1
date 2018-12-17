@@ -27,7 +27,6 @@ public class Signup1Fragment extends Fragment {
     String username, email, password, confirmpass;
     Bundle bundle;
     SignupActivity activity;
-    ViewPager viewPager;
     TextView tv_haveacc;
     Intent signinIntent;
 
@@ -42,9 +41,7 @@ public class Signup1Fragment extends Fragment {
         et_email = view.findViewById(R.id.et_email);
         et_password = view.findViewById(R.id.et_password);
         et_confrimpass = view.findViewById(R.id.et_confrimpass);
-
         btn_next = view.findViewById(R.id.btn_next);
-
         tv_haveacc = view.findViewById(R.id.tv_haveacc);
         return view;
     }

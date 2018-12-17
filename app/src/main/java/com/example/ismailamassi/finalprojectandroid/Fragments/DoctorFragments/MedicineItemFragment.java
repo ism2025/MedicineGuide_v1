@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.ismailamassi.finalprojectandroid.Adapters.MedicineAdapter;
+import com.example.ismailamassi.finalprojectandroid.Control.SystemControl;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Models.Medicine;
 import com.example.ismailamassi.finalprojectandroid.Models.MedicineDepartment;
 import com.example.ismailamassi.finalprojectandroid.Models.MedicineGroup;
@@ -56,7 +58,7 @@ public class MedicineItemFragment extends Fragment {
         } else if (md != null) {
             medicines = md.getDepartmentItems();
         }
-        MedicineAdapter medicineAdapter = new MedicineAdapter(getActivity(), medicines);
+        MedicineAdapter medicineAdapter = new MedicineAdapter(getActivity(), SystemControl.allMedicine);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rv_medicines.setLayoutManager(layoutManager);
         rv_medicines.setAdapter(medicineAdapter);
@@ -67,9 +69,9 @@ public class MedicineItemFragment extends Fragment {
         if (argument != null) {
             typeBundle = argument.getString("type");
             if (typeBundle.equals(Constants.GROUP_BANDLE)) {
-                mg = (MedicineGroup) argument.getSerializable(Constants.GROUP_BANDLE);
+                mg = SystemControl.getGroupById((int) argument.get(Constants.GROUP_BANDLE));
             } else if (typeBundle.equals(Constants.DEPARTMENT_BANDLE)) {
-                md = (MedicineDepartment) argument.getSerializable(Constants.DEPARTMENT_BANDLE);
+                SystemControl.getDepartmentById((int) argument.get(Constants.DEPARTMENT_BANDLE));
             }
         }
     }
