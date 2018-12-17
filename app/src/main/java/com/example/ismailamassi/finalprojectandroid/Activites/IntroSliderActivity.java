@@ -59,6 +59,8 @@ public class IntroSliderActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
         setContentView(R.layout.activity_introslider);
+        SystemControl.generateData(IntroSliderActivity.this);
+
         bindView();
         signinIntent = new Intent(IntroSliderActivity.this, SigninActivity.class);
         signupIntent = new Intent(IntroSliderActivity.this, SignupActivity.class);

@@ -17,8 +17,8 @@ public class Medicine implements Serializable {
     private String storage;
     private String sideEffect;
     private ArrayList<String> traditionalNames;
-    private MedicineGroup medicineGroup;
-    private MedicineDepartment medicineDepartment;
+    private int medicineGroup;
+    private int medicineDepartment;
 
 
     private static int count = 1;
@@ -26,7 +26,7 @@ public class Medicine implements Serializable {
 
     private String year = Calendar.getInstance().get(Calendar.YEAR) + "";
 
-    public Medicine(int id, String name, String about, String uses, String sideEffect, MedicineGroup group, MedicineDepartment department) {
+    public Medicine(int id, String name, String about, String uses, String sideEffect,String photoUrl,String storage, int group, int department) {
         this.setId(id);
         this.setName(name);
         this.setMedicineGroup(group);
@@ -34,9 +34,11 @@ public class Medicine implements Serializable {
         this.setAbout(about);
         this.setUses(uses);
         this.setSideEffect(sideEffect);
+        this.setStorage(storage);
+        this.setPhotoUrl(photoUrl);
         traditionalNames = new ArrayList<>();
-        group.setGroupItem(this);
-        department.addDepartmentItem(this);
+//        group.setGroupItem(this);
+//        department.addDepartmentItem(this);
         SystemControl.allMedicine.add(this);
     }
 
@@ -56,19 +58,19 @@ public class Medicine implements Serializable {
         this.name = name;
     }
 
-    public MedicineGroup getMedicineGroup() {
+    public int getMedicineGroup() {
         return medicineGroup;
     }
 
-    public void setMedicineGroup(MedicineGroup medicineGroup) {
+    public void setMedicineGroup(int medicineGroup) {
         this.medicineGroup = medicineGroup;
     }
 
-    public MedicineDepartment getMedicineDepartment() {
+    public int getMedicineDepartment() {
         return medicineDepartment;
     }
 
-    public void setMedicineDepartment(MedicineDepartment medicineDepartment) {
+    public void setMedicineDepartment(int medicineDepartment) {
         this.medicineDepartment = medicineDepartment;
     }
 

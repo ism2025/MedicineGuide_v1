@@ -1,6 +1,7 @@
 package com.example.ismailamassi.finalprojectandroid.Fragments.SiginupFragments;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -127,6 +128,6 @@ public class Signup3PatientFragment extends Fragment {
 //        PatientUser pu = new PatientUser(name, email, password, phoneNumber, role, null, photoUrl);
 //        pu.setGender(gender);
         DatabaseHelper helper = new DatabaseHelper(getActivity());
-        helper.insertToPatientTable(name, email, password, phoneNumber, photoUrl, 1, weight + "", null);
+        helper.insertToPatientTable(name, email, password, phoneNumber, photoUrl, gender, weight + "", Dob);
     }
 }

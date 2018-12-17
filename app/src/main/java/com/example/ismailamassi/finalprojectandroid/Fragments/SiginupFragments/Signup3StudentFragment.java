@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.ismailamassi.finalprojectandroid.Activites.SigninActivity;
 import com.example.ismailamassi.finalprojectandroid.Helper.Constants;
+import com.example.ismailamassi.finalprojectandroid.Helper.DatabaseHelper;
 import com.example.ismailamassi.finalprojectandroid.Helper.Methods;
 import com.example.ismailamassi.finalprojectandroid.Models.StudentUser;
 import com.example.ismailamassi.finalprojectandroid.R;
@@ -120,10 +121,9 @@ public class Signup3StudentFragment extends Fragment {
         //Student
         int gender = bundle.getInt("gender");
         String foundation = bundle.getString("foundation");
-        String Dob = bundle.getString("dob");
+        String dob = bundle.getString("dob");
 
-        StudentUser su = new StudentUser(456, name, email, password, phoneNumber, role, null, photoUrl);
-        su.setEducationalFoundation(foundation);
-        su.setGender(gender);
+        DatabaseHelper helper = new DatabaseHelper(getActivity());
+        helper.insertToStudentTable(name,email,password,phoneNumber,photoUrl,gender,foundation,dob);
     }
 }

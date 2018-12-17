@@ -69,7 +69,7 @@ public class Signup2Fragment extends Fragment implements DatePickerDialog.OnDate
         btn_Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, new Signup1Fragment()).addToBackStack(null).commit();
             }
         });
         tv_haveacc.setOnClickListener(new View.OnClickListener() {
@@ -113,15 +113,15 @@ public class Signup2Fragment extends Fragment implements DatePickerDialog.OnDate
         if (typeAcc == Constants.STUDENT_ID) {
             Signup3StudentFragment studentFragment = new Signup3StudentFragment();
             studentFragment.setArguments(bundle);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).addToBackStack(null).commit();
         } else if (typeAcc == Constants.FOUNDATION_ID) {
             Signup3FoundtionFragment studentFragment = new Signup3FoundtionFragment();
             studentFragment.setArguments(bundle);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, studentFragment).addToBackStack(null).commit();
         } else if (typeAcc == Constants.PATIENT_ID) {
             Signup3PatientFragment patientFragment = new Signup3PatientFragment();
             patientFragment.setArguments(bundle);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, patientFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, patientFragment).addToBackStack(null).commit();
         }
 
     }

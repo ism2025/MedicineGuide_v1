@@ -33,7 +33,7 @@ public class Constants {
     public static final String TABLE_FOUNDATION = "foundation";
     public static final String TABLE_DOCTOR = "doctor";
     public static final String TABLE_PATIENT = "patient";
-    //    public static final String TABLE_STUDENT = "student";
+    public static final String TABLE_STUDENT = "student";
     public static final String TABLE_MEDICINE = "Medicine";
     public static final String TABLE_DRUG = "drug";
     public static final String TABLE_DOCTOR_PATIENT = "doctor_patient";
@@ -60,8 +60,9 @@ public class Constants {
     public static final String COL_DOCTOR_PHONE_NUMBER = "phoneNumber";
     public static final String COL_DOCTOR_RATE = "rate";
     public static final String COL_DOCTOR_SECTION = "section";
+    public static final String COL_DOCTOR_FOUNDATION = "foundation";
 
-    //PATIENT COLS
+    //PATIENT COLs
     public static final String COL_PATIENT_ID = "_id";
     public static final String COL_PATIENT_NAME = "name";
     public static final String COL_PATIENT_GENDER = "gender";
@@ -72,8 +73,19 @@ public class Constants {
     public static final String COL_PATIENT_PHOTO = "photo";
     public static final String COL_PATIENT_WEIGHT = "weight";
 
+    //STUDENT COLs
+    public static final String COL_STUDENT_ID = "_id";
+    public static final String COL_STUDENT_NAME = "name";
+    public static final String COL_STUDENT_EMAIL = "email";
+    public static final String COL_STUDENT_PASSWORD = "password";
+    public static final String COL_STUDENT_PHONR_NUMBER = "phoneNumber";
+    public static final String COL_STUDENT_PHOTO = "photo";
+    public static final String COL_STUDENT_GENDER = "gender";
+    public static final String COL_STUDENT_DOB = "dob";
+    public static final String COL_STUDENT_FOUNDATION = "educationFoundation";
 
-    //DRUG COLS
+
+    //DRUG COLs
     public static final String COL_DRUG_ID = "_id";
     public static final String COL_DRUG_DAYOFWEEK = "dayOfWeek";
     public static final String COL_DRUG_TYPE = "type";
@@ -104,8 +116,8 @@ public class Constants {
     public static final String COL_GROUP_NAME = "name";
 
     //TABLE_DOCTOR_PATIENT COLs
-    public static final String COL_DOCTOR_PATIENT_DOCTOR_ID = "_id";
-    public static final String COL_DOCTOR_PATIENT_PATIENT_ID = "_id";
+    public static final String COL_DOCTOR_PATIENT_DOCTOR_ID = "_id_Doctor";
+    public static final String COL_DOCTOR_PATIENT_PATIENT_ID = "_id_Patient";
 
 
 }

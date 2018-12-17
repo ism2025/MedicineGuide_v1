@@ -27,6 +27,7 @@ public class DoctorUser extends User implements Serializable {
         savesMedicine = new ArrayList<>();
         DoctorPatients = new ArrayList<>();
         SystemControl.allDoctors.add(this);
+        SystemControl.allUsers.add(this);
     }
 
 

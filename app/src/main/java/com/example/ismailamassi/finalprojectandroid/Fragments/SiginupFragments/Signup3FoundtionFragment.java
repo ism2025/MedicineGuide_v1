@@ -33,6 +33,8 @@ public class Signup3FoundtionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signup3foundtion, container, false);
         signinIntent = new Intent(getActivity(), SigninActivity.class);
         tv_haveacc = view.findViewById(R.id.tv_haveacc);
+        btn_finish = view.findViewById(R.id.btn_finish);
+        btn_back = view.findViewById(R.id.btn_back);
         return view;
     }
 
@@ -75,7 +77,10 @@ public class Signup3FoundtionFragment extends Fragment {
         String password = bundle.getString("password");
         String phoneNumber = bundle.getString("phoneNumber");
         String photoUrl = "";   //bundle.getString("");
+        String dob = bundle.getString("dob");
         //Foundation
+        DatabaseHelper helper = new DatabaseHelper(getContext());
+        helper.insertToFoundationTable(name, email, password, phoneNumber, photoUrl, "");
     }
 
 }

@@ -22,7 +22,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        SystemControl.generateData(SplashScreenActivity.this );
         sliderIntent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
         CountDownTimer count = new CountDownTimer(1500, 1000) {
             @Override

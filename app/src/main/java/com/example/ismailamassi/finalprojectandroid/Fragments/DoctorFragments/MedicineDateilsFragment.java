@@ -76,8 +76,8 @@ public class MedicineDateilsFragment extends Fragment {
         try {
             medicine = (Medicine) bundle.getSerializable(Constants.MEDICINE_BANDLE);
             tv_medicinename.setText(medicine.getName());
-            tv_groupname.setText(medicine.getMedicineGroup().getName());
-            tv_departmentname.setText(medicine.getMedicineDepartment().getName());
+//            tv_groupname.setText(medicine.getMedicineGroup().getName());
+//            tv_departmentname.setText(medicine.getMedicineDepartment().getName());
             String names = "";
             for (String x : medicine.getTraditionalNames()) {
                 names += x + " .\n";
